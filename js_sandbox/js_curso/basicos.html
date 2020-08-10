@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentos JavaScript</title>
+</head>
+
+<body>
+  <h1>Fundamentos JavaScript</h1>
+
+</body>
+
+<script>
+  // // VAR
+
+  // console.log('*************** VAR *****************');
+
+  // var hola = "Hola Mundo";
+  // let hello = "Hello World";
+  // console.log(hola);
+  // console.log(hello);
+  // console.log(window);
+  // // Ámbito de bloque
+  // var musica = "Rock";
+  // console.log('Variable música antes del bloque', musica);
+  // // Esto es un bloque
+  // /*
+  // Comentario de varias lineas
+  // */
+  // {
+  //   var musica = "Rap";
+  //   console.log('Variable música dentro del bloque', musica);
+  // }
+  // console.log('Variable música despues del bloque', musica);
+
+  // // LET
+
+  // console.log('*************** LET *****************');
+  // let musica2 = "Rock";
+  // console.log('Variable música antes del bloque', musica2);
+  // {
+  //   let musica2 = "Rap";
+  //   console.log('Variable música dentro del bloque', musica2);
+  // }
+  // console.log('Variable música despues del bloque', musica2);
+
+
+  // let a;
+  // // CONST 
+  // const PI = 3.1416;
+  // // const Nueve;
+  // console.log(PI);
+  // //PI = 3.1416;
+
+  // a = "kenai";
+  // console.log(a);
+
+  // const objeto = {
+  //   nombre: "alan",
+  //   edad: 25
+  // }
+
+  // const colores = ['blanco', 'negro', 'azul'];
+  // console.log(objeto);
+  // console.log(colores);
+
+  // objeto.correo = "alanacosta@gmail.com";
+  // colores.push('rojo');
+  // console.log(objeto);
+  // console.log(colores);
+
+  // Mozila developer network
+
+
+
+  // // CADENAS DE TEXTO AKA STRINGS
+  // let nombre = "bryan";
+  // let apellido = "baez";
+  // let saludo = new String('que pex morro');
+  // let lorem = "  loram asdasdsd adsdasd asdasdas asdsd";
+  // console.log(nombre, apellido, saludo);
+  // console.log(nombre.length, apellido.length, saludo.length);
+
+  // console.log(
+  //   nombre.toUpperCase(),
+  //   apellido.toLowerCase(),
+  //   lorem.includes('loram'),
+  //   lorem.includes('aggh'),
+  //   lorem.trim(),
+  //   lorem.split(' ')
+  // );
+
+
+
+  // // CONCATENACIÓN
+  // let nombre = "alan";
+  // let apellido = "acosta";
+  // let saludo = "Hola mi nombre es " + nombre + " " + apellido;
+  // console.log(saludo);
+
+  // // Interpolación de variables
+  // // template strings
+  // let saludo2 = `Hola mi nombre es ${nombre} ${apellido}.`;
+  // console.log(saludo2);
+
+  // let ul = `
+  // <ul>
+  //   <li>Barcelona</li>
+  //   <li>Real Madrid</li>
+  //   <li>Juventus</li>
+  //   <li>Napoli</li>
+  // </ul>
+  // `;
+
+  // console.log(ul);
+
+  // let ul2 = '<ul><li>Barcelona</li><li>Real Madrid</li><li>Juventus</li><li>Napoli</li></ul>';
+  // console.log(ul2);
+
+  // let ul3 = '<ul>';
+  // ul3 += '<li>Barcelona</li>';
+  // ul3 += '<li>Real Madrid</li>';
+  // ul3 += '<li>Juventus</li>';
+  // ul3 += '<li>Napoli</li>';
+  // ul3 += '<ul>';
+
+  // console.log(ul3);
+
+
+
+
+
+
+  //   // NUMBERS
+
+  //   let a = 2;
+  //   let b = new Number(1);
+  //   let c = 7.19;
+  //   let d = "5.6";
+
+  //   console.log(typeof c, typeof d);
+  //   console.log(a, b);
+  //   console.log(c.toFixed(1));
+  //   console.log(c.toFixed(5));
+  //   console.log(parseInt(c));
+  //   console.log(parseFloat(c));
+  //   console.log(a + b);
+  //   console.log(c + Number.parseInt(d));
+  //   console.log(c + Number.parseFloat(d));
+  //   console.log(c + parseInt(d));
+  //   console.log(c + parseFloat(d));
+
+
+
+  // // BOOLEAN
+  // let verdadero = true;
+  // let falso = false;
+  // let v = Boolean(true);
+  // let f = Boolean(false);
+
+  // console.log(verdadero, false, v, f);
+  // console.log(typeof verdadero, typeof false);
+
+  // // TRUTHY
+
+  // console.log(Boolean(0));
+  // console.log(Boolean(-1));
+  // console.log(Boolean(""));
+  // console.log(Boolean("a"));
+
+
+
+  // NaN - Undefined - NULL
+
+  // Undefined indica que no se ha
+  // inicializado una variable y que el valor
+  // está ausente
+  // let indefinida;
+  // console.log(indefinida);
+
+  // // null es un valor especial que indica
+  // // la ausencia de un valor
+  // let nulo = null;
+  // console.log(nulo);
+
+  // // NaN - not a number
+  // let noEsUnNumero = " hola" * 3.7;
+  // console.log(noEsUnNumero);
+
+
+  /*
+  Una función es un bloque de código autocontenido,
+  que se puede definir una vez y ejecutar en cualquier
+  momento.
+  Opcionalmente, una función puede aceptar parámetros y
+  devolver un valor.
+
+  Las functiones en JavaScript son objetos, un tipo
+  especial de objetos.
+
+  Se dice que las funciones son ciudadanos de primra
+  clase porque pueden asignarse a un valor, y pueden
+  pasarse como argumento y usarse como un valor de retorno.
+  */
+
+
+  // // FUNCION DECLARADA
+
+  // // ********declaracion de function**********
+  // function estoEsUnaFuncion() {
+  //   console.log('uno');
+  //   console.log('dos');
+  //   console.log('tres');
+  // }
+
+  // // ********invocación de función************
+  // // estoEsUnaFuncion();
+  // // estoEsUnaFuncion();
+
+  // function unaFuncionQueDevuelveValor() {
+  //   console.log('uno');
+  //   return 19;
+  //   console.log('dos');
+  //   console.log('tres');
+  //   return "La función ha retornado una cadena de texto";
+  // }
+
+  // // let valorDeFuncion = unaFuncionQueDevuelveValor();
+  // // console.log(valorDeFuncion);
+
+  // function saludar(nombre = "Desconocido", edad = 0) {
+  //   console.log(`Hola mi nombre es ${nombre} y tengo ${edad} años.`);
+  // }
+
+  // // saludar('alan', 10);
+  // // saludar();
+
+  // funcionDeclarada();
+
+  // // funciones declaradas vs funciones expresadas
+  // function funcionDeclarada() {
+  //   console.log('Esto es una funcion declarada puede invocarse en cualquier parte de nuestro código incluso antes de que la funcioin sea declarada');
+  // }
+
+  // funcionDeclarada();
+
+  // //funcionExpresada();
+
+  // // función anónima
+  // const funcionExpresada = function () {
+  //   console.log('Esto es una funcion expresada es decir, una funcion que se le ha asignado como valor a una variable, si invocamos una funcion antes de su definición nos dirá... Uncaught ReferenceError: Cannot access "funcionExpresada" before initialization')
+  // }
+
+  // funcionExpresada();
+
+
+
+
+  // // **************** ARRAYS **************
+  // const a = [];
+  // const b = [true, 1, "aggh", ["a", "b", "c", [1, 2, 3]]];
+
+  // console.log(a);
+  // console.log(b);
+  // console.log(b.length);
+  // console.log(b[2]);
+  // console.log(b[0]);
+  // console.log(b[3][2]);
+  // console.log(b[3][3][0]);
+
+  // const c = Array.of(1, 2, 3, 4, "a", "b");
+  // console.log(c);
+
+  // const d = Array(100).fill(false);
+  // console.log(d);
+
+  // const e = new Array();
+  // console.log(e);
+
+  // const f = new Array(1, 2, 3, "a", "b");
+  // console.log(f);
+
+  // const colores = ['rojo', 'verde', 'azul'];
+  // console.log(colores);
+
+  // colores.push('negro');
+  // console.log(colores);
+
+  // colores.pop();
+  // console.log(colores);
+
+  // colores.forEach(function (el, index) {
+  //   console.log(`<li id="${index}">${el}</li>`);
+  // });
+
+
+
+
+
+  // // ************** OBJETOS ************
+  // let a = new String('aggh');
+  // //console.log(a);
+
+  // const b = {}
+  // console.log(b);
+
+  // const c = new Object();
+  // console.log(c);
+
+  // /* dentro de un objeto a las variables se
+  // le van a llamar atributos/propiedades y a
+  // las funciones se le llama métodos */
+
+  // const goku = {
+  //   nombre: 'goku',
+  //   apellido: 'son',
+  //   edad: 30,
+  //   pasatiempos: ['entrenar', 'comer', 'pelear'],
+  //   soltero: false,
+  //   conctacto: {
+  //     email: 'songoku@gmail.com',
+  //     twitter: '@kakaroto',
+  //     movil: '23423434324'
+  //   },
+  //   saludar: function () {
+  //     console.log('Hola :D');
+  //   },
+  //   decirMiNombre: function () {
+  //     console.log(`Hola soy ${this.apellido} ${this.nombre}`);
+  //   }
+  // }
+
+  // console.log(goku);
+  // console.log(goku['nombre']);
+  // console.log(goku['apellido']);
+  // console.log(goku.nombre);
+  // console.log(goku.edad);
+  // console.log(goku.pasatiempos);
+  // console.log(goku.pasatiempos[1]);
+  // console.log(goku.conctacto);
+  // console.log(goku.conctacto.twitter);
+  // goku.saludar();
+  // goku.decirMiNombre();
+
+  // console.log(Object.keys(goku));
+  // console.log(Object.values(goku));
+  // console.log(goku.hasOwnProperty('nombre'));
+  // console.log(goku.hasOwnProperty('nacimiento'));
+
+
+
+
+
+  // ********* TIPOS DE OPERADPRES **************
+
+  //   // Artimeticos + - * / % ()
+
+  //   // let a = 5 + (5 - 10) * 3;
+  //   // let modulo = 5 % 2; // % devuelve el residuo
+  //   // console.log(a);
+  //   // console.log(modulo);
+
+  //   // /* Relacionales >, <, <=, >=, ==, ===, !=, !== */
+  //   // console.log(8 > 9);
+  //   // console.log(8 < 9);
+  //   // console.log(8 >= 8);
+
+  //   /*
+  //   = 1 igual es una asignacion de variable
+  //   == 2 iguales es comparación de valores
+  //   === 3 iguales es comparación del tipo de dato y de valor
+  //   */
+
+  //   // console.log(7 == 7);
+  //   // console.log(7 == '7');
+  //   // console.log(0 == false);
+  //   // console.log(7 === '7');
+  //   // console.log('7' === '7');
+
+  //   /* incremento decremento */
+  //   let i = 1;
+  //   //i += 2;
+  //   //i -= 3;
+  //   //i /= 3;
+  //   //i *= 3;
+
+  //   // console.log(i++);
+  //   // console.log(++i);
+
+  //   /* operador unario */
+  //   i++;
+  //   i--;
+  //   ++i;
+  //   --i;
+  //   console.log(i);
+
+  //   /* operadores lógicos
+  //     ! - not: niega, es decir lo que es verdadero lo vuelve falso
+  //     y viceversa
+  //     || - or: cuando tenga 2 o mas condicionales con que una se 
+  //     cumpla, es decir sea verdadera, el OR será verdadero
+  //     && - and: cuando tengo dos o mas condiciones todas tienen
+  //     que ser verdaderas para que AND sea verdadero 
+  //   */
+  //  console.log(!true);
+  //  console.log(!false);
+
+
+
+
+
+
+
+
+  // // *********** CONDICIONALES **************
+
+  // /* if-else */
+  // let edad = 17;
+  // if (edad > 17) {
+  //   console.log('Eres mayor de edad');
+  // } else {
+  //   console.log('Eres menor de edad');
+  // }
+
+  // /* if-else if-else */
+
+  // /*
+  // Dejame dormir 0 - 5
+  // Buenos dias 6 - 11
+  // Buenas tardes 12 - 18
+  // Buenas noches 19 - 23
+  // */
+
+  // let hora = 5;
+
+  // if (hora >= 0 && hora <= 5) {
+  //   console.log('Déjame dormir');
+  // } else if (hora >= 6 && hora <= 11) {
+  //   console.log('Buenos días');
+  // } else if (hora >= 12 && hora <= 18) {
+  //   console.log('Buenas tardes');
+  // } else {
+  //   console.log('Buenas noches');
+  // }
+
+  // /* operador ternario (condicion) ? verdarero : falso */
+  // console.log('Operadir terbario');
+  // let eresMayor = (edad >= 18)
+  //   ? "Eres mayor de edad"
+  //   : "Eres menor de edad";
+  // console.log(eresMayor);
+
+  // /* switch - case */
+  // let dia = 2;
+
+  // switch (dia) {
+  //   case 0:
+  //     console.log('Domingo');
+  //     break;
+  //   case 1:
+  //     console.log('Lunes');
+  //     break;
+  //   case 2:
+  //     console.log('Martes');
+  //     break;
+  //   case 3:
+  //     console.log('Miercoles');
+  //     break;
+  //   case 4:
+  //     console.log('Jueves');
+  //     break;
+  //   case 5:
+  //     console.log('Viernes');
+  //     break;
+  //   case 6:
+  //     console.log('Sabado');
+  //     break;
+
+  //   default:
+  //     console.log('El día no existe');
+  //     break;
+  // }
+
+
+
+
+
+  // **********Ciclos (LOOPS)***********
+
+  //let contador = 0;
+
+  // while (contador < 10) {
+  //   console.log('while ' + contador);
+  //   contador++;
+  // }
+
+  // do {
+  //   console.log('do while ' + contador);
+  //   contador++;
+  // } while (contador < 10);
+
+  //  for(inicializacion de variable; condicion; decremento o incremento)
+
+
+  // forin
+  // const goku = {
+  //   nombre: "goku",
+  //   apellido: "son",
+  //   edad: 30
+  // }
+  // for (const propiedad in goku) {
+  //   console.log(`Key: ${propiedad} Value: ${goku[propiedad]}`);
+  // }
+
+  // const numeros = [1, 2, 3];
+
+  // // forof
+  // for (const elementos of numeros) {
+  //   console.log(elementos);
+  // }
+
+  // let cadena = "slau";
+  // for (const elementos of cadena) {
+  //   console.log(elementos);
+  // }
+
+
+
+
+
+  // // ***********Manejo de errores**********
+  // // try {
+  // //   console.log('En el try se agrega el código a evaluar');
+  // //   noExiste;
+  // // } catch (error) {
+  // //   console.log('Catch, captura cualquier error surgido o lanzado en el try');
+  // //   console.log(error);
+  // // } finally {
+  // //   console.log('El bloque finally se ejecutará siempre al final de un bloque try-catch');
+  // // }
+
+  // try {
+  //   let numero = 'd';
+  //   if (isNaN(numero)) {
+  //     throw new Error('El caracter introducido no es un numero');
+  //   }
+  //   console.log(numero * numero);
+  // } catch (error) {
+  //   console.log(`Se produjo el siguiente error: ${error}`);
+  // }
+
+
+
+
+
+
+  // ************ BREAK & CONTINUE **************
+
+  // const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+  // for (let i = 0; i < numeros.length; i++) {
+  //   if (i === 5) {
+  //     break;
+  //   }
+  //   console.log(numeros[i]);
+  // }
+
+  // for (let i = 0; i < numeros.length; i++) {
+  //   if (i === 2) {
+  //     continue;
+  //   }
+  //   console.log(numeros[i]);
+  // }
+
+
+
+
+
+
+  // // ************ DESTRUCTURACION *************
+
+  // let numeros = [1, 2, 3];
+
+  // // sin destructuracion
+  // let uno = numeros[0],
+  //   dos = numeros[1],
+  //   tres = numeros[2];
+
+  // console.log(uno, dos, tres);
+
+  // // con destructuracion
+  // const [one, two, three] = numeros;
+  // console.log(one, two, three);
+
+  // const persona = {
+  //   nombre: 'goku',
+  //   apellido: 'son',
+  //   edad: 30
+  // }
+
+  // let { nombre, apellido, edad } = persona;
+  // console.log(nombre, apellido, edad);
+
+
+
+
+
+
+
+  // *********** OBJETOS LITERALES **********
+  // let nombre = "goku",
+  //   edad = 30;
+
+  // const saiyajin = {
+  //   nombre: nombre,
+  //   edad: edad,
+  //   ataque: function () {
+  //     console.log('kame kame ha');
+  //   }
+  // }
+
+  // console.log(saiyajin);
+  // saiyajin.ataque();
+
+  // const kakaroto = {
+  //   nombre,
+  //   edad,
+  //   raza: 'saiyajin',
+  //   ataque() {
+  //     console.log('final flash');
+  //   }
+  // }
+
+  // console.log(kakaroto);
+  // kakaroto.ataque();
+
+
+
+
+
+
+
+
+
+
+
+  // *********** PARAMETROS REST & OPERADOR SPREAD ***********
+  // function sumar(a, b, ...c) {
+  //   let resultado = a + b;
+
+  //   c.forEach(function (n) {
+  //     resultado += n;
+  //   });
+
+  //   return resultado;
+  // }
+
+  // console.log(sumar(1, 2));
+  // console.log(sumar(1, 2, 4, 5));
+
+
+  // const arr1 = [1, 2, 3];
+  // const arr2 = [4, 5, 6];
+
+  // console.log(arr1, arr2);
+
+  // const arr3 = [...arr1, ...arr2];
+  // console.log(arr3);|
+</script>
+
+
+</html>
