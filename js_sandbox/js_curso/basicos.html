@@ -668,6 +668,321 @@
 
   // const arr3 = [...arr1, ...arr2];
   // console.log(arr3);|
+
+
+
+
+
+
+  // ************************ ARROW FUNCTIONS ***************************
+
+
+  // // const saludar = () => console.log('Hola');
+  // // saludar();
+
+  // const saludar = nombre => console.log(`que pex ${nombre}`);
+  // saludar('morro');
+
+  // // const sumar = function (a, b) {
+  // //   return a + b;
+  // // }
+  // const sumar = (a, b) => a + b;
+  // console.log(sumar(5, 9));
+
+  // const funcionDeVariasLineas = () => {
+  //   console.log('Uno');
+  //   console.log('Dos');
+  //   console.log('Tres');
+  // }
+
+  // funcionDeVariasLineas();
+
+  // const numeros = [1, 2, 3, 4, 5];
+
+  // // numeros.forEach(function (el, index) {
+  // //   console.log(`El elemento ${el} se encuentra en el index ${index}`);
+  // // });
+
+  // numeros.forEach((el, index) => console.log(`${el} se encuentra en el index ${index}`));
+
+  // // function Perro() {
+  // //   console.log(this);
+  // // }
+  // // Perro();
+
+  // const perro = {
+  //   nombre: "goku",
+  //   poder() {
+  //     console.log(this);
+  //   }
+  // }
+  // perro.poder();
+
+
+
+
+  // ************************* PROTOTIPOS ****************************
+
+
+  // POO
+  /*
+    Clases - modelo a seguir
+    Objetos - es una instancia de una clase
+      - Atributos - es una caracteristica o propiedad
+        del objeto (son variables dentro de un objeto)
+      - Método - son las acciones que un objeto puede
+        realizar (son funciones dentor de un objeto)
+  */
+
+  /*
+    Prototipos - es un mecanismo por el cual un objeto
+    puede heredar atributos y métodos
+  */
+
+  // const guerrero = {
+  //   nombre: 'goku',
+  //   poder() {
+  //     console.log('KAME KAME HA!!!');
+  //   }
+  // }
+  // const guerrero2 = {
+  //   nombre: 'gohan',
+  //   poder() {
+  //     console.log('MASENKO!!!');
+  //   }
+  // }
+  // console.log(guerrero);
+  // console.log(guerrero2);
+
+
+  // // Función constructora
+
+  // function Guerrero(nombre, tecnica) {
+  //   // Atributos
+  //   this.nombre = nombre;
+  //   this.tecnica = tecnica;
+
+  //   // Métodos
+  //   this.saludar = function () {
+  //     console.log(`hola soy ${this.nombre}`);
+  //   }
+  // }
+
+
+  // // Función constructora donde asignamos los métodos
+  // // al prototipo, no a la función como tal
+
+  // function Guerrero(nombre, tecnica) {
+  //   // Atributos
+  //   this.nombre = nombre;
+  //   this.tecnica = tecnica;
+  // }
+
+  // // Métodos agregados al prototipo de la función
+  // // constructora
+  // Guerrero.prototype.saludar = function () {
+  //   console.log(`hola soy ${this.nombre}`);
+  // }
+
+  // const goku = new Guerrero('goku', 'kame kame ha');
+  // const gohan = new Guerrero('gohan', 'masenko');
+
+  // // console.log(goku)
+  // // console.log(gohan)
+
+  // // goku.saludar();
+  // // gohan.saludar();
+
+
+
+
+
+
+
+  // // ************************** HERENCIA ************************
+
+  // // HERENCIA PROTOTIPICA
+  // function Saijajin(nombre, tecnica, clase) {
+  //   this.super = Guerrero;
+  //   this.super(nombre, tecnica);
+  //   this.clase = clase;
+  // }
+
+  // // saijajin está heredando de guerrero
+  // Saijajin.prototype = new Guerrero();
+  // Saijajin.prototype.constructor = Saijajin;
+
+  // // sobrescritura de métodos del prototipo
+  // // padre en el hijo
+  // Saijajin.prototype.saludar = function () {
+  //   console.log('Soy un saijajin no un terricola');
+  // }
+  // Saijajin.prototype.comer = function () {
+  //   console.log('Como 10 veces más que un terricola');
+  // }
+
+  // const raditz = new Saijajin('raditz', 'ninguna', 'media');
+  // console.log(raditz);
+
+  // raditz.saludar();
+  // raditz.comer();
+
+
+
+
+  // ******************** CLASES ******************
+
+  // Función constructora
+
+  // class Guerrero {
+  //   /* el constructor es un método especial que se
+  //   ejecuta en el momento de instanciar una clase */
+  //   constructor(nombre, tecnica) {
+  //     // Atributos
+  //     this.nombre = nombre;
+  //     this.tecnica = tecnica;
+  //   }
+
+  //   // Métodos
+  //   saludar() {
+  //     console.log(`hola soy ${this.nombre}`);
+  //   }
+  // }
+
+  // class Saijajin extends Guerrero {
+  //   constructor(nombre, tecnica, clase) {
+  //     // con el método super() se manda a llamar
+  //     // el constructor de la clase padre
+  //     super(nombre, tecnica);
+  //     this.clase = clase;
+  //     this.genero = null;
+  //   }
+
+  //   saludar() {
+  //     console.log('Soy un saijajin no un terricola');
+  //   }
+
+  //   tecnicaEspecial() {
+  //     console.log('Mi tecnica es: ' + this.tecnica);
+  //   }
+
+  //   static queEres() {
+  //     console.log('Los saijajin somos una raza muy fuerte');
+  //   }
+
+  //   // Los setters y getters son métodos especiales que
+  //   // nos permiten establecer y obtener los valores de 
+  //   // atributos de nuestra clase
+  //   get getGenero() {
+  //     return this.genero;
+  //   }
+
+  //   set setGenero(genero) {
+  //     this.genero = genero;
+  //   }
+  // }
+
+  // const vegeta = new Saijajin('vegeta', 'final flash', 'clase alta');
+  // const goten = new Guerrero('goten', 'kame kame ha');
+
+  // console.log(vegeta);
+  // console.log(goten);
+  // goten.saludar();
+  // vegeta.tecnicaEspecial();
+
+
+  // // ****************** Métodos estáticos, getters y setters *********************
+
+  // //  Un método estático se pueden ejecutar sin necesidad
+  // // de instanciar la clase
+  // Saijajin.queEres();
+
+
+  // vegeta.setGenero = "Masculino";
+  // console.log(vegeta.getGenero);
+
+
+
+
+
+  // ******************** OBJETO CONSOLE ********************
+  // console.log(console);
+  // console.error('Esto es un error');
+  // console.warn('Esto es un aviso');
+  // console.info('Esto es un mensaje informativo');
+  // console.log('Un registro de lo que ha pasado en nuestra aplicación');
+
+
+  // let nombre = 'Leo',
+  //   apellido = 'Messi',
+  //   edad = 33;
+
+  // console.log(nombre);
+  // console.log(apellido);
+  // console.log(edad);
+  // console.log(nombre, apellido, edad);
+  // console.log(`Hola mi nombre es ${nombre} ${apellido} y tengo ${edad} años`);
+  // console.log(`Hola mi nombre es %s %s y tengo %d años`, nombre, apellido, edad);
+  // console.clear();
+  // console.log(window);
+  // console.log(document);
+  // console.dir(window);
+  // console.dir(document);
+
+  // console.group("Curso js");
+  // console.log('Curso JS');
+  // console.log('Curso NodeJS');
+  // console.log('Curso PHP');
+  // console.groupEnd();
+
+  // console.groupCollapsed("Curso js");
+  // console.log('Curso JS');
+  // console.log('Curso NodeJS');
+  // console.log('Curso PHP');
+  // console.groupEnd();
+  // console.clear();
+
+  // console.log(console);
+  // console.table(Object.entries(console).sort());
+
+  // const numeros = [1, 2, 3, 4, 5],
+  //   vocales = ["a", "e", "i", "o", "u"];
+
+  // console.table(numeros);
+  // console.table(vocales);
+
+  // const jugador = {
+  //   nombre: "messi",
+  //   nacionalidad: "argentina",
+  //   posicion: "delantero"
+  // }
+
+  // console.table(jugador);
+  // console.clear();
+
+  // console.time("Cuanto tiempo tarda mi código");
+  // const arreglo = Array(1000000);
+
+  // for (let i = 0; i < arreglo.length; i++) {
+  //   arreglo[i] = i;
+  // }
+
+  // console.timeEnd("Cuanto tiempo tarda mi código");
+  // //console.log(arreglo);
+
+  // console.clear();
+
+  // for (let i = 0; i <= 100; i++) {
+  //   console.count('codigo for: ');
+  //   console.log(i);
+  // }
+
+  // let x = 3,
+  //   y = 2,
+  //   pruebaXY = "Se espera que X sea menor que Y";
+
+  // console.assert(x < y, { x, y, pruebaXY });
+
 </script>
 
 
