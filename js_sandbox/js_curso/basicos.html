@@ -983,6 +983,203 @@
 
   // console.assert(x < y, { x, y, pruebaXY });
 
+
+
+
+
+
+
+  // *************************** OBJETO DATE *************************
+  // console.log(Date());
+
+  // let fecha = new Date();
+  // console.log(fecha);
+  // // dia del mes
+  // console.log(fecha.getDate());
+  // // dia de la semana  D L M MI J V S -> 0 1 2 3 4 5 6
+  // console.log(fecha.getDay());
+  // // mes ENE FEB MAR ABR MAY JUN
+  // // JUL AGO SEP OCT NOV DIC
+  // // -> 0 1 2 3 4 5 6 7 8 9 10 11 
+  // console.log(fecha.getMonth());
+  // // obtener año
+  // console.log(fecha.getFullYear());
+
+
+  // console.log(fecha.getHours());
+  // console.log(fecha.getMinutes());
+  // console.log(fecha.getSeconds());
+  // console.log(fecha.getMilliseconds());
+
+  // console.log(fecha.toString());
+  // console.log(fecha.toDateString());
+  // console.log(fecha.toLocaleString());
+  // console.log(fecha.toLocaleDateString());
+  // console.log(fecha.toLocaleTimeString());
+  // console.log(fecha.getTimezoneOffset());
+  // console.log(fecha.getUTCDate());
+  // console.log(fecha.getUTCHours());
+  // console.log(Date.now());
+  // // Librería moments.js
+  // let cumpleAlan = new Date(1995, 3, 25);
+  // console.log(cumpleAlan);
+
+
+
+
+
+
+  // *********************  OBJETO MATH ********************
+
+  // console.log(Math);
+  // console.log(Math.PI);
+  // console.log(Math.abs(-7.8));
+  // console.log(Math.ceil(7.2));
+  // console.log(Math.floor(7.8));
+  // console.log(Math.round(7.8));
+  // console.log(Math.pow(2, 5));
+  // console.log(Math.sign(-5.1)); // -1 0 1
+  // console.log(Math.random());
+  // console.log(Math.random() * 1000);
+  // console.log(Math.round(Math.random() * 1000));
+
+
+
+
+
+
+  // *********************** OPERADOR CORTOCICUITO *************************
+
+  /*
+      CORTOCICUITO OR - cuando el valor de la izquierda en la
+      expresión siempre pueda validar a true es el valor que
+      se caragará por defecto.
+
+      CORTOCICUITO AND - cuando el valor de la izquierda en
+      expresión siempre pueda validar a false, es el valor
+      se cargará por defecto.
+  */
+
+  // function saludar(nombre) {
+  //   nombre = nombre || "Desconocido"; // este es un operador cortocicuito
+  //   console.log(`Hola ${nombre}`);
+  // }
+  // saludar('Gokú');
+  // saludar();
+
+  // console.log("Cadena" || "Valor de la derecha");
+  // console.log(19 || "Valor de la derecha");
+  // console.log(true || "Valor de la derecha");
+  // console.log(false || "Valor de la derecha");
+  // console.log(null || "Valor de la derecha");
+  // console.log(undefined || "Valor de la derecha");
+  // console.log("" || "Valor de la derecha");
+
+  // // console.log("Cadena" && "Valor de la derecha");
+  // // console.log(19 && "Valor de la derecha");
+  // // console.log(true && "Valor de la derecha");
+  // // console.log(false && "Valor de la derecha");
+  // // console.log(null && "Valor de la derecha");
+  // // console.log(undefined && "Valor de la derecha");
+  // // console.log("" && "Valor de la derecha");
+
+
+
+
+
+
+
+
+
+
+  /***************** ALERT, CONFIRM, PROMPT ****************************/
+  // console.log(window);
+  // // window.alert('Esto es una alerta');
+  // // window.confirm('Esto es una confirmación');
+  // // window.prompt('Esto es un promopt y le permite al usuario ingresar un valir');
+  // // alert('Esto es una alerta');
+  // // confirm('Esto es una confirmación');
+  // // prompt('Esto es un promopt y le permite al usuario ingresar un valir');
+
+  // let alerta = alert('Esto es una alerta'),
+  //   confirmacion = confirm('Esto es una confirmación'),
+  //   aviso = prompt('Esto es un aviso y le permite al usuario ingresar un valir');
+
+  // console.log(alerta);
+  // console.log(confirmacion);
+  // console.log(aviso);
+
+
+
+
+
+
+
+
+
+  // ********************** EXPRESIONES REGULARES *************************
+
+  /*
+  EXPRESIONES REGULARES:
+      son una secuencia de caracteres que forma un patrón
+      de búsqueda, principalmente utilizada para la
+      búsqueda de patrones de cadenas de carácteres
+
+  https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular#:~:text=En%20c%C3%B3mputo%20te%C3%B3rico%20y%20teor%C3%ADa,conforma%20un%20patr%C3%B3n%20de%20b%C3%BAsqueda.
+  */
+
+  // let cadena = "son una secuencia de caracteres que forma un patrón de búsqueda, principalmente utilizada para la búsqueda de patrones de cadenas de carácteres";
+  // let expReg = new RegExp("secuencia", "ig");
+  // console.log(expReg.test(cadena));
+  // console.log(expReg.exec(cadena));
+
+  // let expReg2 = /secuencia{1,}/ig;
+  // console.log(expReg2.test(cadena));
+  // console.log(expReg2.exec(cadena));
+
+
+
+
+
+
+
+  //******** FUNCIONES ANÓNIMAS AUTOEJECUTABLES ******
+
+  // (function () {
+  //   console.log('Mi primer IIFE');
+  // })();
+  // // alert("que pex");
+
+
+  // (function (d, w, c) {
+  //   console.log('Mi segunda IIFE');
+  //   console.log(d);
+  //   console.log(w);
+  //   c.log("Este es un console.log");
+  // })(document, window, console);
+
+  // formas de escribir las funciones anónimas
+  // auto ejecutables
+
+  // // clasica
+  // (function () {
+  //   console.log("versión clásica");
+  // })();
+
+  // // la crockford (JS The God Parts)
+  // ((function () {
+  //   console.log('Versión Crockford');
+  // })());
+
+  // // unaria
+  // +function () {
+  //   console.log('version unaria');
+  // }();
+
+  // // facebook
+  // !function () {
+  //   console.log('Version facebook');
+  // }();
 </script>
 
 
