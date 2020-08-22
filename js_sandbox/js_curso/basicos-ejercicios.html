@@ -403,13 +403,286 @@
     // 18) Programa una función que dada una cadena de texto cuente el número de 
     // vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4,
     //  Consonantes: 5.
+    const contarLetras = (cadena = "") => {
+      if (!cadena) return console.warn('No ingresó ninguna cadena de texto');
+      if (typeof cadena !== 'string') return console.error(`El valor ${cadena} no es una cadena de texto válida`);
+
+      let vocales = 0,
+        consonantes = 0,
+        regex = /[aeiouáéíóú]/i;
+
+      for (let letra of cadena) {
+        if (letra !== ' ') {
+          (regex.test(letra))
+            ? vocales++
+            : consonantes++;
+        }
+      }
+
+      return console.info({
+        cadena,
+        vocales,
+        consonantes
+      });
+    }
+
+    // contarLetras('Hola Mundo');
+    // contarLetras();
+    // contarLetras(4);
+    // contarLetras('ñoño');
+    // contarLetras('AMÉrica');
 
 
 
 
 
-    // 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
-    // 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
+
+    // 19) Programa una función que valide que un texto sea un nombre válido, pe. 
+    // miFuncion("Jonathan MirCha") devolverá verdadero.
+    const validarNombre = (nombre = "") => {
+      if (!nombre) return console.warn('No ingresó nombre');
+      if (typeof nombre !== 'string') return console.error(`El valor ${nombre} no es un nombre válido`);
+
+      let regex = /^[a-z\s]+$/gi;
+
+      (regex.test(nombre))
+        ? console.info(`El nombre ${nombre} es un nombre válido`)
+        : console.info(`El nombre ${nombre}  NO es un nombre válido`);
+    }
+
+    // validarNombre('Alan Acosta');
+    // validarNombre('Alan Acosta,');
+    // validarNombre('Alan');
+    // validarNombre(3);
+    // validarNombre("");
+
+
+
+
+    // 20) Programa una función que valide que un texto sea un email válido, 
+    // pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
+    const validarEmail = (email = "") => {
+      if (!email) return console.warn('No ingresó email');
+      if (typeof email !== 'string') return console.error(`El valor ${email} no es una cadena de texto`);
+
+      let regex = /^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i;
+
+      (regex.test(email))
+        ? console.info(`El mail ${email} es un correo válido`)
+        : console.info(`El mail ${email} NO es un correo válido`);
+    }
+
+    // validarEmail('bryanbaez2504@gmail.com');
+    // validarEmail('bryanbaez2504@gmail');
+    // validarEmail('brya,nbaez2504@gmail');
+    // validarEmail('');
+    // validarEmail(9);
+
+    // Fusion 19 y 20
+    const validarPatron = (cadena = "", patron = undefined) => {
+      if (!cadena) return console.warn('No ingresaste una cadena de texto a evaluar');
+      if (typeof cadena !== 'string') return console.error(`El valor ${cadena} no es una cadena de texto`);
+
+
+      if (!patron) return console.warn('No ingresaste un patron a evaluar');
+      if (!(patron instanceof RegExp)) return console.error(`El valor ${patron} no es una expresion regular`);
+      let regex = patron;
+
+      (regex.test(cadena))
+        ? console.info(`${cadena} cumple con el patron ingresado`)
+        : console.info(`${cadena} No cumple con el patron ingresado`);
+    }
+
+    // validarPatron('bryanbaez2504@gmail.com', /^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i);
+    // validarPatron('bryan acosta', /^[a-z\s]+$/gi);
+    // validarPatron();
+    // validarPatron({});
+
+
+
+
+
+    // 21) Programa una función que dado un array numérico devuelve 
+    // otro array con los números elevados al cuadrado, pe. mi_funcion([1, 4, 5]) 
+    // devolverá [1, 16, 25].
+
+    const elevarAlCuadrado = (numeros = undefined) => {
+      if (numeros === undefined) return console.warn('No ingresaste un arreglo de números');
+      if (!(numeros instanceof Array)) return console.error(`El valor ${numeros} no es un arreglo`);
+      if (numeros.length === 0) return console.warn('Array vacío');
+
+      for (const num of numeros) {
+        if (typeof num !== "number") return console.error(`El valor ${num} ingresado no es un número`);
+      }
+
+      const nuevosNumeros = numeros.map(el => el * el);
+      return console.info(nuevosNumeros);
+    }
+    // elevarAlCuadrado([1, 4, 5]);
+    // elevarAlCuadrado([1, 4, 'z']);
+    // elevarAlCuadrado({});
+    // elevarAlCuadrado([]);
+
+
+
+
+    // 22) Programa una función que dado un array devuelva el número mas alto y
+    // el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].
+    const arrayMinMax = (numeros = undefined) => {
+      if (numeros === undefined) return console.warn('No ingresaste un arreglo de números');
+      if (!(numeros instanceof Array)) return console.error(`El valor ${numeros} no es un arreglo`);
+      if (numeros.length === 0) return console.warn('Array vacío');
+
+      for (const num of numeros) {
+        if (typeof num !== "number") return console.error(`El valor ${num} ingresado no es un número`);
+      }
+
+
+      return console.info(
+        `Arreglo original ${numeros}\nValor mayor: ${Math.max(...numeros)}\nValor menor: ${Math.min(...numeros)}`);
+    }
+
+    // arrayMinMax([1, 4, 5, 99, -60]);
+    // arrayMinMax([1, 4, 5, 99, 'aggh']);
+    // arrayMinMax(false);
+    // arrayMinMax();
+
+
+
+
+    // 23) Programa una función que dado un array de números devuelva un objeto con 2 
+    // arreglos en el primero almacena los números pares y en el segundo los impares, 
+    // pe. miFuncion([1,2,3,4,5,6,7,8,9,0]) devolverá {pares: [2,4,6,8,0], impares: [1,3,5,7,9]}.
+    const separarParesImparesy = (numeros = undefined) => {
+      if (numeros === undefined) return console.warn('No ingresaste un arreglo de números');
+      if (!(numeros instanceof Array)) return console.error(`El valor ${numeros} no es un arreglo`);
+      if (numeros.length === 0) return console.warn('Array vacío');
+
+      for (const num of numeros) {
+        if (typeof num !== "number") return console.error(`El valor ${num} ingresado no es un número`);
+      }
+
+      console.info({
+        pares: numeros.filter(num => num % 2 === 0),
+        impares: numeros.filter(num => num % 2 === 1)
+      });
+
+    }
+
+    // separarParesImparesy([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
+    // separarParesImparesy([1, 2, 3, 4, 5, 6, 7, 8, 9, 'aggh']);
+    // separarParesImparesy([]);
+
+
+
+
+
+    // 24) Programa una función que dado un arreglo de 
+    // números devuelva un objeto con dos arreglos, 
+    // el primero tendrá los numeros ordenados en 
+    // forma ascendente y el segundo de forma 
+    // descendiente, pe. miFuncion([7, 5,7,8,6]) 
+    // devolverá { asc: [5,6,7,7,8], desc: [8,7,7,6,5] }.
+    const ordernarArreglo = (numeros = undefined) => {
+      if (numeros === undefined) return console.warn('No ingresaste un arreglo de números');
+      if (!(numeros instanceof Array)) return console.error(`El valor ${numeros} no es un arreglo`);
+      if (numeros.length === 0) return console.warn('Array vacío');
+
+      for (const num of numeros) {
+        if (typeof num !== "number") return console.error(`El valor ${num} ingresado no es un número`);
+      }
+
+      console.info({
+        asc: numeros.map(el => el).sort(),
+        desc: numeros.map(el => el).sort().reverse()
+      })
+    }
+
+    // ordernarArreglo([7, 5, 7, 8, 6]);
+    // ordernarArreglo([7, 5, 7, 8, false]);
+    // ordernarArreglo([]);
+
+
+    // 25) Programa una función que dado un arreglo de 
+    // elementos, elimine los duplicados, pe. 
+    // miFuncion(["x", 10, "x", 2, "10", 10, true, 
+    // true]) devolverá ["x", 10, 2, "10", true].
+    const eliminarDuplicados = (arr = undefined) => {
+      if (arr === undefined) return console.warn('No ingresaste un arreglo');
+      if (!(arr instanceof Array)) return console.error(`El valor ${numeros} no es un arreglo`);
+      if (arr.length === 0) return console.error('Array vacío');
+      if (arr.length === 1) return console.warn('El arreglo debe tener al menos 2 elementos');
+
+      /*  return console.info({
+          original: arr,
+          sinDuplicafos: arr.filter((value, index) => arr.indexOf(value) === index)
+        }) */
+      return console.info({
+        original: arr,
+        sinDuplicafos: [... new Set(arr)]
+      })
+    }
+    // eliminarDuplicados(["x", 10, "x", 2, "10", 10, true, true]);
+    // eliminarDuplicados([]);
+    // eliminarDuplicados([1]);
+
+
+
+
+
+    // 26) Programa una función que dado un arreglo 
+    // de números obtenga el promedio, pe. 
+    // promedio([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5.
+    const calcularPromedio = (numeros = undefined) => {
+      if (numeros === undefined) return console.warn('No ingresaste un arreglo de números');
+      if (!(numeros instanceof Array)) return console.error(`El valor ${numeros} no es un arreglo`);
+      if (numeros.length === 0) return console.warn('Array vacío');
+
+      for (const num of numeros) {
+        if (typeof num !== "number") return console.error(`El valor ${num} ingresado no es un número`);
+      }
+
+      return console.info(
+        numeros.reduce((current, previous, index, numeros) => {
+          current += previous;
+          if (index === numeros.length - 1) {
+            return `El promedio de ${numeros.join(" + ")} es ${current / numeros.length}`;
+          } else {
+            return current;
+          }
+        })
+      )
+    }
+
+    // calcularPromedio([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]);
+    // calcularPromedio([]);
+    // calcularPromedio([{}]);
+
+
+
+
+//     27) Programa una clase llamada Pelicula.
+
+// La clase recibirá un objeto al momento de instanciarse con los siguentes datos: id de la película en IMDB, titulo, director, año de estreno, país o países de origen, géneros y calificación en IMBD.
+//   - Todos los datos del objeto son obligatorios.
+//   - Valida que el id IMDB tenga 9 caracteres, los primeros 2 sean letras y los 
+//      7 restantes números.
+//   - Valida que el título no rebase los 100 caracteres.
+//   - Valida que el director no rebase los 50 caracteres.
+//   - Valida que el año de estreno sea un número entero de 4 dígitos.
+//   - Valida que el país o paises sea introducidos en forma de arreglo.
+//   - Valida que los géneros sean introducidos en forma de arreglo.
+//   - Valida que los géneros introducidos esten dentro de los géneros 
+//      aceptados*.
+//   - Crea un método estático que devuelva los géneros aceptados*.
+//   - Valida que la calificación sea un número entre 0 y 10 pudiendo ser 
+//     decimal de una posición.
+//   - Crea un método que devuelva toda la ficha técnica de la película.
+//   - Apartir de un arreglo con la información de 3 películas genera 3 
+//     instancias de la clase de forma automatizada e imprime la ficha técnica 
+//     de cada película.
+
+// * Géneros Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary ,Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western.
   </script>
 </body>
 
