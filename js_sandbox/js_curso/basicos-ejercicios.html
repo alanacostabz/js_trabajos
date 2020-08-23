@@ -661,28 +661,186 @@
 
 
 
-//     27) Programa una clase llamada Pelicula.
+    //     27) Programa una clase llamada Pelicula.
 
-// La clase recibirá un objeto al momento de instanciarse con los siguentes datos: id de la película en IMDB, titulo, director, año de estreno, país o países de origen, géneros y calificación en IMBD.
-//   - Todos los datos del objeto son obligatorios.
-//   - Valida que el id IMDB tenga 9 caracteres, los primeros 2 sean letras y los 
-//      7 restantes números.
-//   - Valida que el título no rebase los 100 caracteres.
-//   - Valida que el director no rebase los 50 caracteres.
-//   - Valida que el año de estreno sea un número entero de 4 dígitos.
-//   - Valida que el país o paises sea introducidos en forma de arreglo.
-//   - Valida que los géneros sean introducidos en forma de arreglo.
-//   - Valida que los géneros introducidos esten dentro de los géneros 
-//      aceptados*.
-//   - Crea un método estático que devuelva los géneros aceptados*.
-//   - Valida que la calificación sea un número entre 0 y 10 pudiendo ser 
-//     decimal de una posición.
-//   - Crea un método que devuelva toda la ficha técnica de la película.
-//   - Apartir de un arreglo con la información de 3 películas genera 3 
-//     instancias de la clase de forma automatizada e imprime la ficha técnica 
-//     de cada película.
+    // La clase recibirá un objeto al momento de instanciarse con los siguentes datos: id de la película en IMDB, titulo, director, año de estreno, país o países de origen, géneros y calificación en IMBD.
+    //   - Todos los datos del objeto son obligatorios.
+    //   - Valida que el id IMDB tenga 9 caracteres, los primeros 2 sean letras y los 
+    //      7 restantes números.
+    //   - Valida que el título no rebase los 100 caracteres.
+    //   - Valida que el director no rebase los 50 caracteres.
+    //   - Valida que el año de estreno sea un número entero de 4 dígitos.
+    //   - Valida que el país o paises sea introducidos en forma de arreglo.
+    //   - Valida que los géneros sean introducidos en forma de arreglo.
+    //   - Valida que los géneros introducidos esten dentro de los géneros 
+    //      aceptados*.
+    //   - Crea un método estático que devuelva los géneros aceptados*.
+    //   - Valida que la calificación sea un número entre 0 y 10 pudiendo ser 
+    //     decimal de una posición.
+    //   - Crea un método que devuelva toda la ficha técnica de la película.
+    //   - Apartir de un arreglo con la información de 3 películas genera 3 
+    //     instancias de la clase de forma automatizada e imprime la ficha técnica 
+    //     de cada película.
+    // * Géneros Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary ,Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western.
 
-// * Géneros Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary ,Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western.
+    class Movie {
+      constructor({ id, title, director, premiere, country, genre, rating }) {
+        this.id = id;
+        this.title = title;
+        this.director = director;
+        this.premiere = premiere;
+        this.country = country;
+        this.genre = genre;
+        this.rating = rating;
+
+        this.validarIMDB(id);
+        this.validarTitulo(title);
+        this.validarDirector(director);
+        this.validarEstreno(premiere);
+        this.validarPais(country);
+        this.validarGeneros(genre);
+        this.validarCalificacion(rating);
+
+      }
+
+      static get listaGeneros() {
+        return ["Action", "Adult", "Aventure", "Animation", "Comedy", "Drama", "Musical", "Horror"]
+      }
+
+      static generosAceptados() {
+        return console.info(`Los generos aceptados son: ${Movie.listaGeneros.join(", ")}`)
+      }
+
+      validarCadena(propiedad, valor) {
+        if (!valor) return console.warn(`${propiedad} "${valor}"" está vacío"`);
+
+        if (typeof valor !== "string") return console.error(`${propiedad} "${valor}" ingresado, NO es una cadena de texto"`);
+
+        return true;
+      }
+
+      validarLongitudCadena(propiedad, valor, longitud) {
+        if (valor.length > longitud) return console.error(`${propiedad} "${valor}" excede el número de carácteres permitidis (${longitud})`);
+        return true;
+      }
+
+      validarNumero(propiedad, valor) {
+        if (!valor) return console.warn(`${propiedad} "${valor}" está vacío`);
+
+        if (typeof valor !== "number") return console.error(`${propiedad} "${valor}, ingresado, NO es un número"`);
+
+        return true;
+      }
+
+      validarArreglo(propiedad, valor) {
+        if (!valor) return console.warn(`${propiedad} "${propiedad}" ${valor} está vacío`);
+
+        if (!(valor instanceof Array)) return console.error(`${propiedad} "${valor}" ingresado, NO es un arreglo"`);
+
+        if (valor.length === 0) return console.error(`${propiedad} "${valor}"" no tiene datos`);
+
+        for (let cadena of valor) {
+          if (typeof cadena !== "string") return console.error(`El valor "${cadena} ingresado, NO es una cadena de texto"`);
+        }
+
+        return true;
+      }
+
+      validarIMDB(id) {
+        if (this.validarCadena("IMDB id", id)) {
+          if (!(/^([a-z]){2}([0-9]){7}$/.test(id))) {
+            return console.error(`IMDB id "${id}" no es válido, debe tener 9 carácteres, los 2 primeras letras minúsculas, los 7 restantes números`);
+          }
+        }
+      }
+
+      validarEstreno(estreno) {
+        if (this.validarNumero("Año de estreno", estreno)) {
+          if (!(/^([0-9]){4}$/.test(estreno))) {
+            return console.error(`Año de estreno "${estreno}" no es válido, debe tener 4 digitos`);
+          }
+        }
+      }
+
+      validarTitulo(titulo) {
+        if (this.validarCadena("Titulo", titulo)) {
+          this.validarLongitudCadena("Titulo", titulo, 100);
+        }
+      }
+
+      validarDirector(director) {
+        if (this.validarCadena("Director", director)) {
+          this.validarLongitudCadena("Director", director, 50);
+        }
+      }
+
+      validarPais(pais) {
+        this.validarArreglo('Pais', pais);
+      }
+
+      validarGeneros(generos) {
+        if (this.validarArreglo('Géneros', generos)) {
+          for (const genero of generos) {
+            // console.log(genero, Movie.listaGeneros.includes(genero));
+            if (!Movie.listaGeneros.includes(genero)) {
+              console.error(`Géneros incorrectos ${generos.join(", ")}`);
+              Movie.generosAceptados();
+            }
+          }
+        }
+      }
+
+      validarCalificacion(calificacion) {
+        if (this.validarNumero("Calificacion", calificacion)) {
+          return (calificacion < 0 || calificacion > 10)
+            ? console.error(`La calificación tiene que estar en un rango entre 0 y 10`)
+            : this.rating = calificacion.toFixed(1);
+        }
+      }
+
+      fichaTecnica() {
+        console.info(`Ficha Técnica\nTítulo: "${this.title}"\nDirector: "${this.director}"\nAño: "${this.premiere}"\nPaís: "${this.country.join(",")}"\nGéneros: "${this.genre}"\nCalificación: "${this.rating}"\nIMDB id: "${this.id}"`);
+      }
+
+    }
+
+    // Movie.generosAceptados();
+
+    // const mov = new Movie({
+    //   id: "tt1234567",
+    //   title: "movie title",
+    //   director: "director movie",
+    //   premiere: 2020,
+    //   country: ['México', 'EUA'],
+    //   genre: ['Drama'],
+    //   rating: 8.79
+    // });
+
+    // mov.fichaTecnica();
+
+
+    const misPelis = [
+      {
+        id: "tt0758758",
+        title: "Into The Wild",
+        director: "Sean Penn",
+        premiere: 2007,
+        country: ['USA'],
+        genre: ['Drama'],
+        rating: 8.1
+      },
+      {
+        id: "tt0479143",
+        title: "Rocky Balboa",
+        director: "Sylvester Stallone",
+        premiere: 2006,
+        country: ['USA'],
+        genre: ['Drama'],
+        rating: 7.1
+      }
+    ];
+
+    misPelis.forEach(el => new Movie(el).fichaTecnica());
   </script>
 </body>
 
