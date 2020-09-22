@@ -5,6 +5,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WEB APIs</title>
+  <style>
+    :root {
+      --yellow-color: #F7DF1E;
+      --dark-color: #222;
+    }
+
+    .cards {
+      border: thin solid var(--dark-color);
+      padding: 1rem;
+    }
+
+    .card {
+      display: inline-block;
+      background: var(--dark-color);
+      color: var(--yellow-color);
+    }
+
+    .card figcaption {
+      padding: 1rem;
+    }
+
+    .rotate-45 {
+      transform: rotate(45deg);
+    }
+
+    .rotate-135 {
+      transform: rotate(135deg);
+    }
+
+    .opacity-80 {
+      opacity: .8;
+    }
+
+    .sepia {
+      filter: sepia(1);
+    }
+  </style>
 </head>
 
 <body>
@@ -46,8 +83,8 @@
     </ul>
   </nav>
   <input type="text" name="nombre" placeholder="Nombre">
-  <a class="link-dom" href="dom.html"></a>
-  <section class="card">
+<a class="link-dom" href="dom.html" style="background-color: #F7DF1E; color: #222;" data-id="1" data-description="Document Object Model">DOM</a>
+  <section class="cards">
     <figure class="card">
       <img src="https://placeimg.com/200/200/tech" alt="tech">
       <figcaption>Tech</figcaption>
@@ -69,6 +106,13 @@
       <figcaption>Nature</figcaption>
     </figure>
   </section>
+
+   <template id="template-card">
+     <figure class="card">
+       <img>
+       <figcaption></figcaption>
+     </figure>
+   </template>
 
   <script>
     /*
