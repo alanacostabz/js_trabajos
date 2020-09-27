@@ -326,18 +326,124 @@ y es otra forma de poder interactuar con el DOM*/
 
 
 // DOM: Modificando elementos (OLD STYLE)
-const $cards = document.querySelector(".cards"),
-$newCard = document.createElement("figure"),
-$cloneCards = $cards.cloneNode(true);
 
-$newCard.innerHTML = `
-<img src = "https://placeimg.com/200/200/any" alt="Any">  
-<figcaption>Any</figcaption>
-`;
+// const $cards = document.querySelector(".cards"),
+// $newCard = document.createElement("figure"),
+// $cloneCards = $cards.cloneNode(true);
 
-$newCard.classList.add("card");
+// $newCard.innerHTML = `
+// <img src = "https://placeimg.com/200/200/any" alt="Any">  
+// <figcaption>Any</figcaption>
+// `;
+
+// $newCard.classList.add("card");
 
 //$cards.replaceChild($newCard, $cards.children[2]);
 //$cards.removeChild($cards.lastElementChild);
 //$cards.insertBefore($newCard, $cards.firstElementChild);
-document.body.appendChild($cloneCards);
+//document.body.appendChild($cloneCards);
+
+
+
+
+
+
+
+
+// DOM: Modificando Elementos (Cool Style)
+
+/*
+  insertAdjacent...
+    .insertAdjacentElement(position,el)
+    .insertAdjacentHTML(position,html)
+    .insertAdjacentText(position,text)
+
+  Posiciones:
+    .beforebegin(hermano anterior)
+    .afterbegin(primer hijo)
+    .beforeend(ultimo hijo)
+    .afterend(hermano siguiente)
+*/
+
+// const $cards = document.querySelector(".cards"),
+// $newCard = document.createElement("figure");
+// let $contentCard = `
+// <img src = "https://placeimg.com/200/200/any" alt="Any">  
+// <figcaption></figcaption>
+// `;
+
+// $newCard.classList.add("card");
+
+// $newCard.insertAdjacentHTML('beforeend', $contentCard);
+// $newCard.querySelector('figcaption').insertAdjacentText('afterbegin','Any');
+//$cards.insertAdjacentElement('afterbegin', $newCard);
+
+//$cards.prepend($newCard);
+//$cards.before($newCard);
+//$cards.append($newCard);
+//$cards.after($newCard);
+
+
+
+
+
+
+// DOM: Manejadores de Eventos 
+/*
+  Los eventos son aquel mecanismo que tenemos
+  en js para poder controlar las acciones del 
+  usuario y definir ciertos comportamientos del
+  documento que sucedan en cierto momento o cuando
+  se cumplan algunas condiciones.
+*/
+
+
+// DOM: Eventos con Parámetros y Remover Eventos
+
+function holaMundo() {
+  alert('Hola Mundo');
+  console.log(event);
+}
+
+function saludar(nombre = 'Desconocid@') {
+  alert(`Hola ${nombre}`);
+}
+
+const $eventoSemantico = document.getElementById('evento-semantico');
+const $eventoMultiple = document.getElementById('evento-multiple');
+const $eventoRemover = document.getElementById('evento-remover');
+
+$eventoSemantico.onclick = holaMundo;
+$eventoSemantico.onclick = (e) => {
+  alert('Hola mundo manejador de eventos semanticos');
+  console.log(e);
+  console.log(event);
+}
+
+$eventoMultiple.addEventListener('click', holaMundo);
+$eventoMultiple.addEventListener('click', (e) => {
+  alert('Manejador de eventos multiples');
+  console.log(e);
+  console.log(e.type);
+  console.log(e.target);
+});
+
+$eventoMultiple.addEventListener('click', () => {
+  saludar();
+  saludar('messi');
+});
+
+const removerDobleClick = (e) => {
+  alert(`Removiendo el evento de tipo ${e.type}`);
+  console.log(e);
+  $eventoRemover.removeEventListener('dblclick', removerDobleClick);
+  $eventoRemover.disable = true;
+}
+
+$eventoRemover.addEventListener('dblclick', removerDobleClick);
+
+
+
+
+
+
