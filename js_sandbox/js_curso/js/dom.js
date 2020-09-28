@@ -400,50 +400,211 @@ y es otra forma de poder interactuar con el DOM*/
 
 // DOM: Eventos con Parámetros y Remover Eventos
 
-function holaMundo() {
-  alert('Hola Mundo');
-  console.log(event);
-}
+// function holaMundo() {
+//   alert('Hola Mundo');
+//   console.log(event);
+// }
 
-function saludar(nombre = 'Desconocid@') {
-  alert(`Hola ${nombre}`);
-}
+// function saludar(nombre = 'Desconocid@') {
+//   alert(`Hola ${nombre}`);
+// }
 
-const $eventoSemantico = document.getElementById('evento-semantico');
-const $eventoMultiple = document.getElementById('evento-multiple');
-const $eventoRemover = document.getElementById('evento-remover');
+// const $eventoSemantico = document.getElementById('evento-semantico');
+// const $eventoMultiple = document.getElementById('evento-multiple');
+// const $eventoRemover = document.getElementById('evento-remover');
 
-$eventoSemantico.onclick = holaMundo;
-$eventoSemantico.onclick = (e) => {
-  alert('Hola mundo manejador de eventos semanticos');
-  console.log(e);
-  console.log(event);
-}
+// $eventoSemantico.onclick = holaMundo;
+// $eventoSemantico.onclick = (e) => {
+//   alert('Hola mundo manejador de eventos semanticos');
+//   console.log(e);
+//   console.log(event);
+// }
 
-$eventoMultiple.addEventListener('click', holaMundo);
-$eventoMultiple.addEventListener('click', (e) => {
-  alert('Manejador de eventos multiples');
-  console.log(e);
-  console.log(e.type);
-  console.log(e.target);
-});
+// $eventoMultiple.addEventListener('click', holaMundo);
+// $eventoMultiple.addEventListener('click', (e) => {
+//   alert('Manejador de eventos multiples');
+//   console.log(e);
+//   console.log(e.type);
+//   console.log(e.target);
+// });
 
-$eventoMultiple.addEventListener('click', () => {
-  saludar();
-  saludar('messi');
-});
+// $eventoMultiple.addEventListener('click', () => {
+//   saludar();
+//   saludar('messi');
+// });
 
-const removerDobleClick = (e) => {
-  alert(`Removiendo el evento de tipo ${e.type}`);
-  console.log(e);
-  $eventoRemover.removeEventListener('dblclick', removerDobleClick);
-  $eventoRemover.disable = true;
-}
+// const removerDobleClick = (e) => {
+//   alert(`Removiendo el evento de tipo ${e.type}`);
+//   console.log(e);
+//   $eventoRemover.removeEventListener('dblclick', removerDobleClick);
+//   $eventoRemover.disable = true;
+// }
 
-$eventoRemover.addEventListener('dblclick', removerDobleClick);
-
-
+// $eventoRemover.addEventListener('dblclick', removerDobleClick);
 
 
 
 
+
+
+
+
+// DOM: Flujo de Eventos (Burbuja y Captura) 
+// DOM: stopPropagation & preventDefault
+
+// const $divsEventos = document.querySelectorAll('.eventos-flujo div'),
+//   $linkEventos = document.querySelector('.eventos-flujo a');
+
+// //console.log($divsEventos);
+// function flujoEventos(e) {
+//   console.log(`Hola te saluda ${this.className}, el click que originó ${e.target.className}`);
+//   e.stopPropagation();
+// }
+
+// $divsEventos.forEach(div => {
+//   // Fase de burbuja
+//   div.addEventListener('click', flujoEventos);
+//   //div.addEventListener('click', flujoEventos, false);
+
+//   // Fase de captura
+//   //div.addEventListener('click', flujoEventos, true);
+
+//   // div.addEventListener('click', flujoEventos, {
+//   //   capture: false,
+//   //   once: true
+//   // });
+// });
+
+
+// $linkEventos.addEventListener('click', e => {
+//   alert('Hola soy goku');
+//   e.preventDefault();
+//   e.stopPropagation();
+// });
+
+
+
+
+//console.log($divsEventos);
+// function flujoEventos(e) {
+//   console.log(`Hola te saluda ${this}, el click que originó ${e.target.className}`);
+// }
+
+// document.addEventListener('click',(e) => {
+//   console.log('Click en',e.target);
+
+//   if (e.target.matches('.eventos-flujo div')) {
+//     flujoEventos(e);
+//   }
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+// BOM: Propiedades y Eventos
+//window.addEventListener('resize',(e)=> {
+//   console.clear();
+//   console.log('****** EVENTO RESIZE ********');
+//   console.log(window.innerWidth);
+//   console.log(window.innerHeight);
+//   console.log(window.outerWidth);
+//   console.log(window.outerHeight);
+// });
+
+// window.addEventListener('scroll', e => {
+//   console.clear();
+//   console.log('****** EVENTO SCROLL ********');
+//   console.log(window.scrollX);
+//   console.log(window.scrollY);
+//   console.log(e);
+// });
+
+// window.addEventListener('load', e => {
+//   //console.clear();
+//   console.log('****** EVENTO LOAD ********');
+//   console.log(window.screenX);
+//   console.log(window.screenY);
+//   console.log(e);
+// });
+
+
+// document.addEventListener('DOMContentLoaded', e => {
+//   //console.clear();
+//   console.log('****** EVENTO DOMContentLoaded ********');
+//   console.log(window.screenX);
+//   console.log(window.screenY);
+//   console.log(e);
+// });
+
+
+
+
+
+
+
+// BOM: Métodos
+//window.alert('Alerta');
+//window.confirm('Confirmación');
+//window.prompt('Aviso');
+// const $btnAbrir = document.getElementById('abrir-ventana'),
+// $btnCerrar = document.getElementById('cerrar-ventana'),
+// $btnImprimir = document.getElementById('imprimir-ventana');
+
+// let ventana;
+
+// $btnAbrir.addEventListener('click', e =>{
+//   ventana = window.open('http://bryanacosta.000webhostapp.com');
+// });
+// $btnCerrar.addEventListener('click', e =>{
+//   //window.close();
+//   ventana.close();
+// });
+// $btnImprimir.addEventListener('click', e =>{
+//   window.print();
+// });
+
+
+
+
+
+
+
+// BOM: Objetos: URL, Historial y Navegador
+// console.log('************ Objeto URL (location) ****************');
+// console.log(location);
+// console.log(location.origin);
+// console.log(location.protocol);
+// console.log(location.host);
+// console.log(location.hostname);
+// console.log(location.port);
+// console.log(location.href);
+// console.log(location.hash);
+// console.log(location.pathname);
+//location.reload();
+
+// console.log('************ Objeto Historial (history) ****************');
+// console.log(history);
+// console.log(history.length);
+// //history.back(4);
+// //history.forward(3);
+// //history.go(-1);
+
+// console.log('************ Objeto Navegador (navigator) ****************');
+// console.log(navigator);
+// console.log(navigator.connection);
+// console.log(navigator.geolocation);
+// console.log(navigator.mediaDevices);
+// console.log(navigator.mimeTypes);
+// console.log(navigator.onLine);
+// console.log(navigator.serviceWorker);
+// console.log(navigator.storage);
+// console.log(navigator.usb);
+// console.log(navigator.userAgent);
