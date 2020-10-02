@@ -1,5 +1,6 @@
 import scrollTopButton from "./dom/boton-scroll.js";
 import countdown from "./dom/cuenta_regresiva.js";
+import userDeviceInfo from "./dom/deteccion_dispositivos.js";
 import hamburgerMenu from "./dom/menu_hamburguesa.js";
 import responsiveMedia from "./dom/objeto_responsive.js";
 import responsiveTester from "./dom/prueba_responsive.js";
@@ -27,6 +28,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
     `<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13941.910404225995!2d-110.98854997619631!3d29.12110027170239!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd2dff85522f25990!2sEscuela%20Secundaria%20General%20%236%20Luis%20Donaldo%20Colosio%20Murrieta!5e0!3m2!1ses-419!2smx!4v1601520368283!5m2!1ses-419!2smx" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>`
   );
   responsiveTester("responsive-tester");
+  userDeviceInfo("user-device");
 });
 
 d.addEventListener("keydown", (e) => {
