@@ -1,10 +1,15 @@
 import scrollTopButton from "./dom/boton-scroll.js";
 import countdown from "./dom/cuenta_regresiva.js";
 import userDeviceInfo from "./dom/deteccion_dispositivos.js";
+import networkStatus from "./dom/deteccion_red.js";
+import webCam from "./dom/deteccion_webcam.js";
+import searchFilters from "./dom/filtro_busquedas.js";
+import getGeolocation from "./dom/geolocalizacion.js";
 import hamburgerMenu from "./dom/menu_hamburguesa.js";
 import responsiveMedia from "./dom/objeto_responsive.js";
 import responsiveTester from "./dom/prueba_responsive.js";
 import { digitalClock, alarm } from "./dom/reloj.js";
+import draw from "./dom/sorteo.js";
 import { moveBall, shortcuts } from "./dom/teclado.js";
 import darkTheme from "./dom/tema-oscuro.js";
 const d = document;
@@ -29,6 +34,10 @@ d.addEventListener("DOMContentLoaded", (e) => {
   );
   responsiveTester("responsive-tester");
   userDeviceInfo("user-device");
+  webCam("webcam");
+  getGeolocation("geolocation");
+  searchFilters(".card-filter", ".card");
+  draw("#winner-btn", ".player");
 });
 
 d.addEventListener("keydown", (e) => {
@@ -37,3 +46,4 @@ d.addEventListener("keydown", (e) => {
 });
 
 darkTheme(".dark-theme-btn", "dark-mode");
+networkStatus();
