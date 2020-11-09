@@ -1,0 +1,46 @@
+{
+  "Saiyajines": [
+    {
+      "id": 1,
+      "nombre": "Gohan",
+      "clase": "Híbrido"
+    },
+    {
+      "id": 2,
+      "nombre": "Gokú",
+      "clase": "Baja"
+    },
+    {
+      "id": 3,
+      "nombre": "Vegeta",
+      "clase": "Alta"
+    },
+    {
+      "id": 4,
+      "nombre": "Trunks",
+      "clase": "Híbrido"
+    },
+    {
+      "id": 5,
+      "nombre": "Goten",
+      "clase": "Híbrido"
+    }
+  ],
+  "Villanos": [
+    {
+      "id": 1,
+      "nombre": "Freezer",
+      "Raza": "Alienigena"
+    },
+    {
+      "id": 2,
+      "nombre": "Cell",
+      "Raza": "Andrioide"
+    },
+    {
+      "id": 2,
+      "nombre": "Majin Boo",
+      "Raza": "Moustro"
+    }
+  ]
+}
