@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevos Tipos de Datos en JavaScript</title>
+</head>
+
+<body>
+  <h1>Nuevos Tipos de Datos en JavaScript</h1>
+
+  <script>
+    /*
+      MAP: es un objeto que nos sirve para almacenar un conjunto de valores asociados a manera de objeto primitivo, se usa como una colección de datos que están relacionados entre sí.
+
+      NOTA:
+        - Así como los sets son arreglos que no permiten valores repetidos, los maps son objetos que nos permiten tener una colección de llave valor (como un objeto común y corriente de JS) pero la diferencia que en un objeto primitivo el nombre de todas las propiedades de ese objeto son cadenas de texto, mientras que en los mapas podemos generar llaves que no sean cadenas de texto (aunque se desanconseja su uso).
+
+        - Un uso de los mapas es justamente guardar una colección de datos que a lo mejor estén relacionados. Por ejemplo un catálogo o algo que tengamos que tener preestablecido en nuestra aplicación.
+
+    */
+
+    const mapa = new Map();
+
+    mapa.set("nombre", "leonel");
+    mapa.set("apellido", "messi");
+    mapa.set("equipo", "psg");
+
+    console.log(mapa);
+    console.log(mapa.size);
+    console.log(mapa.has("edad"));
+    console.log(mapa.has("equipo"));
+    console.log(mapa.get("apellido"));
+    mapa.set("equipo", "manchester united");
+    console.log(mapa.get("equipo"));
+    mapa.delete("nombre");
+
+    mapa.set(19, "decinueve");
+    mapa.set(false, "falso");
+    mapa.set({}, "objeto");
+    console.log(mapa);
+
+    for (const [key, value] of mapa) {
+      console.log(`Llave: ${key}, Valor: ${value}`);
+    }
+
+    const mapa2 = new Map([
+      ["nombre", "cristiano"],
+      ["apellido", "ronaldo"],
+      ["dorsal", 7],
+      [500, "goles"],
+    ]);
+
+    console.log(mapa2);
+
+    for (const [key, value] of mapa2) {
+      console.log(`Llave: ${key}, Valor: ${value}`);
+    }
+
+    const llavesMapa2 = [...mapa2.keys()];
+    const valoresMapa2 = [...mapa2.values()];
+
+    console.log(`llavesMapa2`, llavesMapa2);
+    console.log(`valoresMapa2`, valoresMapa2);
+
+
+  </script>
+</body>
+
+</html>

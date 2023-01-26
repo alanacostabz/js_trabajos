@@ -1,0 +1,33 @@
+¿Cuál es la diferencia entre las arrow functions y la funciones regulares?
+
+  1. La funcion regular puede existir con o sin nombre, por lo que puede ser anónima mientras que las Arrows functions son siempre anónimas.
+
+  2. Una funcion regular con nombre puede ser izada (hoisting), esto significa que se puede declarar una funcion en un scope (alcanze) espécifico y llamar esa funcion antes de su declaración mientras que las arrow functions esto es imposible, por que esta no tiene ningun nombre, aun declarandola con let o const solo se puede llamar despues de la declaración de la variable
+
+  3. Arrows functions no tienen un this propio y si intenta acceder a la variable this dentro de la arrow function
+
+  4. Arrows functions no tienen acceso a la variable arguments, mientras que en las funciones regulares si, los argumento contienen una matriz de todos los argumentos que se usaron en una llamada de función
+
+  5. Las arrow function tienen la capacidad de capturar el objeto this del contexto donde se encuentren, capturan el contexto del objeto padre donde ha sido declarado
+
+
+  La arrow function se usa cuando queremos utilizar la viarbale this dentro de la funcion es decir que haga referencia al objeto dentro de la función. Mientras que las funciones regulares si se quiere usar el hoisting
+
+  Objeto: es una coleccion da datos relacionados, como un contenedor de propiedades. 
+
+EJEMPLOS
+
+  Se evitar para evitar  que la función sea alterada por lo menos dentro del contexto de esta
+    Arrow function
+      const sum = (a, b) => {
+        console.log(a, b);
+        return a + b; 
+      }
+
+  Se usa mucho para la devolución de llamadas, ya que no requieren tener un nombre
+    SetTimeout(
+      () => console.log("One second was elapsed),
+      1000
+    )
+
+  ({} => console.log("Inmediately Invoked))();

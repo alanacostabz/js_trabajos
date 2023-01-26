@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD API REST FETCH</title>
+</head>
+
+<body>
+  <h1>CRUD API REST FETCH</h1>
+  <section id="crud">
+
+    <article>
+      <h2 class="crud-title">Agregar Juego de XBOX</h2>
+      <form class="crud-form">
+        <input type="text" name="name" placeholder="Ingrese nombre" required>
+        <br>
+        <input type="date" name="release_date" required>
+        <br>
+        <input type="submit" value="Enviar">
+        <input type="hidden" name="id">
+      </form>
+    </article>
+
+    <article>
+      <h2>Ver juegos de XBOX</h2>
+      <table class="crud-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Fecha Lanzamiento</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </article>
+  </section>
+  <template id="crud-template">
+    <tr>
+      <td class="name"></td>
+      <td class="release_date"></td>
+      <td>
+        <button class="edit">Editar</button>
+        <button class="delete">Eliminar</button>
+      </td>
+    </tr>
+  </template>
+  <script>
+    const d = document,
+      $table = d.querySelector('.crud-table'),
+      $form = d.querySelector('.crud-form'),
+      $title = d.querySelector('.crud-title'),
+      $template = d.getElementById('crud-template').content,
+      $fragment = d.createDocumentFragment();
+
+    const getAll = async () => {
+      try {
+        let res = await fetch("http://localhost:5555/xbox"),
+          json = await res.json();
+
+        if (!res.ok) throw { status: res.status, statusText: res.statusText };
+
+        console.log(json);
+        json.forEach(el => {
+          $template.querySelector('.name').textContent = el.name;
+          $template.querySelector('.release_date').textContent = el.release_date;
+          $template.querySelector(".edit").dataset.id = el.id
+          $template.querySelector(".edit").dataset.name = el.name
+          $template.querySelector(".edit").dataset.release_date = el.release_date;
+          $template.querySelector(".delete").dataset.id = el.id;
+
+          let $clone = d.importNode($template, true);
+          $fragment.appendChild($clone);
+        })
+
+        $table.querySelector("tbody").appendChild($fragment);
+
+      } catch (err) {
+        let message = err.statusText || "Ocurrió un error";
+        $table.insertAdjacentHTML("afterend", `<p><b>Error ${err.status}: ${message}</b></p>`);
+
+      }
+    }
+
+    d.addEventListener("DOMContentLoaded", getAll);
+
+    d.addEventListener("submit", async e => {
+      if (e.target === $form) {
+        e.preventDefault();
+
+        if (!e.target.id.value) {
+          // Create - POST
+          try {
+            let options = {
+              method: "POST",
+              headers: {
+                "Content-type": "application/json; charset=utf-8"
+              },
+              body: JSON.stringify({
+                name: e.target.name.value,
+                release_date: e.target.release_date.value,
+              })
+            },
+              res = await fetch("http://localhost:5555/xbox", options),
+              json = await res.json();
+
+            if (!res.ok) throw { status: res.status, statusText: res.statusText };
+
+            location.reload();
+          } catch (err) {
+            let message = err.statusText || "Ocurrió un error";
+            $form.insertAdjacentHTML("afterend", `<p><b>Error ${err.status}: ${message}</b></p>`);
+          }
+        } else {
+          // Update - PUT
+          try {
+            let options = {
+              method: "PUT",
+              headers: {
+                "Content-type": "application/json; charset=utf-8"
+              },
+              body: JSON.stringify({
+                name: e.target.name.value,
+                release_date: e.target.release_date.value,
+              })
+            },
+              res = await fetch(`http://localhost:5555/xbox/${e.target.id.value}`, options),
+              json = await res.json();
+
+            if (!res.ok) throw { status: res.status, statusText: res.statusText };
+
+            location.reload();
+          } catch (err) {
+            let message = err.statusText || "Ocurrió un error";
+            $form.insertAdjacentHTML("afterend", `<p><b>Error ${err.status}: ${message}</b></p>`);
+          }
+        }
+      }
+    });
+
+    d.addEventListener("click", async e => {
+      if (e.target.matches(".edit")) {
+        $title.textContent = "Editar juego";
+        $form.name.value = e.target.dataset.name;
+        $form.release_date.value = e.target.dataset.release_date;
+        $form.id.value = e.target.dataset.id;
+      }
+
+      if (e.target.matches(".delete")) {
+        let isDelete = confirm(`¿Estás seguro de eliminar el id ${e.target.dataset.id}?`);
+
+        if (isDelete) {
+          // Delete - DELETE
+          try {
+            let options = {
+              method: "DELETE",
+              headers: {
+                "Content-type": "application/json; charset=utf-8"
+              },
+            },
+              res = await fetch(`http://localhost:5555/xbox/${e.target.dataset.id}`, options),
+              json = await res.json();
+
+            if (!res.ok) throw { status: res.status, statusText: res.statusText };
+
+            location.reload();
+          } catch (err) {
+            let message = err.statusText || "Ocurrió un error";
+            alert(`Error ${err.status}: ${message}`);
+          }
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

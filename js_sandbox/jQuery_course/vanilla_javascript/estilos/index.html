@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estilos</title>
+  <style>
+    .caja {
+      width: 300px;
+      height: 300px;
+      background-color: aqua;
+      margin: 0 auto;
+      border: 1px solid red;
+      box-shadow: 1px 1px 12px black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="caja">
+
+    <script>
+      // Obtener los estilos de un elemento
+      var div = document.querySelector('div'),
+        estilos = window.getComputedStyle(div, null);
+
+      console.log(estilos['background-color']);
+
+      div.classList.add('trnasision');
+
+      // Modificar o añadir estilos
+      div.style.backgroundColor = 'goldenrod';
+      div.style['border-radius'] = '20px';
+
+      // Varios estilos a la vez
+      div.style.cssText += 'background-color: green; width: 400px; height: 200px';
+    </script>
+  </div>
+</body>
+
+</html>

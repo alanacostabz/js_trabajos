@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulos en JavaScript</title>
+</head>
+
+<body>
+  <h1>Módulos en JavaScript</h1>
+
+  <script>
+    // MÓDULOS - (IMPORT/EXPORT)
+
+    /*
+      Con los módulos podemos llamar nuestroa archivos de JS no solo desde el archivo HTML si no también desde un archivo de JS interno podemos llamar a otro
+
+      - se necesita poner el script type="module" para poder utilizar los archivos, y hacer uso de IMPORT
+      - los navegadores como internet explorer no soportan +ES6 por lo que se debe preever generando otro script que no lo tenga, para los navegadores como CHROME el script de respaldo debe de llevar "nomodule" como atributo de clase para que lo ignore y no se duplique la funcionalidad de mi código
+
+      EXPORT DEFAULT: significa que cuando mandamos a llamar en formato de módulo un archivo es una función que por default se va a ejecutar (no hay necesidad de hacer la destructuracion), NO se pueden dos funciones/objetos/variables con EXPORT DEFAULT
+    */
+
+  </script>
+
+  <!-- NOTA: lo recomendable es mandar a llamar los archivos antes del cierre de la etiqueta body ya que el código de JS
+  es bloqueante por lo que los archivos son muy pesados o son muchos los que se estan mandado a llamar en la cabecera
+  puede hacer que se tarde el navegador en cargar el código HTML y los estilos. -->
+  <script src="js/modules.js" type="module"></script>
+  <script src="js/no-modules.js" nomodule></script>
+</body>
+
+</html>

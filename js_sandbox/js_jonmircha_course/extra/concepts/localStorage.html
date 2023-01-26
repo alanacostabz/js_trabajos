@@ -1,0 +1,47 @@
+<!-- 
+  LOCALSTORAGE
+    - Se utiliza en el frontend con javascript
+    - Sirve para que podamos guardar información en nuestro navegador
+    - Estos datos son persistentes en el navegador
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Storage</title>
+</head>
+
+<body>
+  <div id="elements"></div>
+</body>
+
+<script>
+  /* list = [
+     {
+       name: "Zelda BOTW",
+       age: 34
+     },
+     {
+       name: "Elden Ring",
+       age: 60
+     }
+   ]; */
+
+  // localStorage.setItem("list", JSON.stringify(list));
+
+  let list = JSON.parse(localStorage.getItem("list"));
+
+  list.forEach(el => {
+    let elements = document.getElementById("elements");
+    let div = document.createElement("div");
+    div.innerHTML = el.name + " " + el.age;
+    elements.appendChild(div);
+  });
+
+  console.log(typeof list, list);
+</script>
+
+</html>

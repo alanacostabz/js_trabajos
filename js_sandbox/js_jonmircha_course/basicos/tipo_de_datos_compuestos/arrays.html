@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentos JavaScript</title>
+</head>
+
+<body>
+  <h1>Fundamentos JavaScript</h1>
+
+  <script>
+    // ARREGLO: es una colección de elementos, estos elementos pueden ser de diferente tipo
+    const a = [];
+    const b = [1, true, "Hola", ["A", "B", "C"]];
+    console.log(a);
+    console.log(b);
+    console.log(b.length);
+    console.log(b[2]);
+    console.log(b[3][2]);
+
+    const c = Array.of('x', 'y', 'z', 8, 9);
+    console.log(c);
+
+    const d = Array(10).fill(false);
+    console.log(d);
+
+    // Prácticas que ya no se usan para definir arreglos
+    const e = new Array();
+    console.log(e);
+
+    const f = new Array(1, 2, 3, true, false);
+    console.log(f);
+
+    // Métodos de un array
+    const colores = ["Rojo", "Verde", "Azul"];
+    console.log(colores);
+    colores.push("Negro"); // añade un nuevo elemento al array
+    console.log(colores);
+    colores.pop(); // elimina el último elemento del array
+    console.log(colores);
+
+    colores.forEach(function (el, index) {
+      console.log(`<li id=${index}>${el}</>`);
+    });
+
+
+  </script>
+</body>
+
+</html>

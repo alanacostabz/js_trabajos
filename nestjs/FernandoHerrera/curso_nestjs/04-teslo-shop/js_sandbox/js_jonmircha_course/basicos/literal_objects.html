@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentos JavaScript</title>
+</head>
+
+<body>
+  <h1>Fundamentos JavaScript</h1>
+
+  <script>
+    // OBJETOS LITERALES
+
+    /*
+      Es una nueva forma de escribir atributos y métodos e incluso de asignarlos
+    */
+
+    let nombre = "CR7", edad = 36;
+
+    const jugador = {
+      nombre: nombre,
+      edad: edad,
+      celebracion: function () {
+        console.log('SIUUUUUUUU');
+      }
+    }
+
+    console.log(jugador);
+    jugador.celebracion();
+
+    // si la variable tiene el mismo nombre que la propiedad a la cual se le quiere asignar un valor se hace de la siguiente manera:
+    const player = {
+      nombre,
+      edad,
+      nacionalidad: "Portuguesa",
+      celebracion: function () {
+        console.log('SIUUUUUUUUUUUUUUUU');
+      }
+    }
+    console.log(player);
+    player.celebracion();
+
+  </script>
+</body>
+
+</html>

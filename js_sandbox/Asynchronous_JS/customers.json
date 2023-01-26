@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "Eden Hazard",
+        "company": "Real Madrid",
+        "phone": "777-777-7777"
+    },
+
+    {
+        "id": 2,
+        "name": "Barbara Palvin",
+        "company": "Victoria Secret",
+        "phone": "696-969-6969"
+    },
+
+    {
+        "id": 3,
+        "name": "John Marston",
+        "company": "Rockstar Games",
+        "phone": "545-343-7868"
+    },
+
+    {
+        "id": 4,
+        "name": "Oliver Atom",
+        "company": "Niupi FC",
+        "phone": "453-456-3244"
+    }
+    
+]

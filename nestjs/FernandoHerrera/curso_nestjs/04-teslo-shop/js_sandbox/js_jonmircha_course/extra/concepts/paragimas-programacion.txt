@@ -1,0 +1,19 @@
+PROGRAMACIÓN: en pocas palabras es darle datos a una computadora para que procese esos datos siguiendo esas instrucciones y nos devuelva un resultado para resolver problemas, resolver problemas apoyandos de una computadora dandole datos e instrucciones lógicas
+
+PARADIGMA: es una forma diferente de resolver un problema, son formas de programar, un estilo documentado de programación
+  - Existen varios lenguajes multiparadigma como javascript y python
+  - Lenguaje multiparadigma: es aquel lenguajes que se puede utilizar para programar con diferentes estilos
+
+Se diferencian en dos grupos en imperativa y declrativa:
+  - IMPERATIVA: es aquella que dice lo que se va a hacer detallando lo que se va hacer (paso por paso)
+  - DECLARATIVA:  nosotros le decimos al sistema lo que se espera que haga pero  sin importar como lo hace
+
+TIPOS DE PARADIGMAS:
+  - PROGRAMACIÓN ESTRUCTURADA: o secuencial de arriba hacia abajo
+
+  - PROGRAMACIÓN ORIENTADA A OBJETOS: separa al sistema en entidades llamadas objetos los cuales tienen caracteristicas y funciones y luego estas entidades se conectan entre ellas.
+
+  - PROGRAMACIÓN FUNCIONAL: tambien divide el sistema en pedazos (varios objetos) como en la POO pero a diferencia de esta cada pedazo es una funcion y una funcion hace una sola cosa
+
+  - PROGRAMACIÓN REACTIVA: se observa cambios en un flujo de datos y cuando esos datos cambios se hace alguna acción
+

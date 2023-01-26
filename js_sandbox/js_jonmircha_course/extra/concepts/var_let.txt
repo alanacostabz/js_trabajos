@@ -1,0 +1,6 @@
+VAR - la variable se declara con un ámbito global
+
+LET - la variable tiene un ámbito de bloque
+
+
+Usar var me puede meter en un problema de reasignación de valores, se quedan en el valor global del documento

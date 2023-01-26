@@ -1,0 +1,763 @@
+CURSO NEST: DESARROLLO BACKEND ESCALABLE CON NODE - FERNANDO HERRERA UDEMY - 2023
+
+- INTRODUCCIÓN
+
+  - nestjs es un framework de node, el cual nos permite trabajar y crear aplicaciones en el backend
+
+  - VENTAJAS
+
+    - expandible: estructura modular que permite usar otras librerías fácilmente
+
+    - versatil: brinda la columna vertebral de todo tipo de aplicaciones del servidor
+
+    - progresivo: toma lo mejor y último de javascript y nos ofrece soluciones robustas
+
+  - TEMARIO DEL CURSO
+    - introducción de typescript
+    - core building blocks:
+      - modules
+      - guards
+      - interceptors
+      - pipes
+      - decorators
+      - gateways
+      - services
+      - controllers
+      - exception filters
+      - modules
+      - postgresql
+      - websockets
+      - solid principles
+      - uploads
+      - sql / nosql
+      - cryptography
+      - env
+      - rest
+      - typeorm
+      - hashing
+      - nestcli
+      - authorization
+      - deployment
+      - mongodb
+      - dockerization
+      - docker
+      - cors
+      - authentication
+      - tokens
+      - dtos
+      - class transformers
+
+  AL TERMINAR EL CURSO HABREMOS:
+    - desplegado varios backends en internet
+    - realizado comunicación en tiempo real con ws
+    - creado nuestra autenticación y autorización
+    - core building blocks personalizados
+    - dockerizado tu aplicación
+    - crear múltiples restful apis
+    - carga de archivos
+    - dominar typrescript nest
+    - crear documentación detallada de los endpoints
+    - validaciones de inicio a fin
+    - entidades y esquemas para sql y nosql DBs
+    - mucho más...
+
+  TYPESCRIPT
+    - temario
+      - tipos básicos
+      - interfaces
+      - implementaciones
+      - clases
+      - patrón adaptador
+      - principio de sustitución de liskov
+      - inyección de dependencias
+      - getters
+      - métodos asíncronso
+      - decoradores de clases y métodos
+
+    - qué es typescript
+      - es un lenguaje de programación fuertemente tipado que se basa en javascript, lo que brinda
+      mejores herramientas a cualquier escala, a diferencia de javascript, typescript dispone de una 
+      escritura estática, mientras que js es un lenguaje dinámico, javascript no admite módulos, mientras
+      que typescript si que les da soporte, typescript dispone de interfaz, mientras que javascript no,
+      en ts si que hay que compilar el código mientras que en js no
+
+      - interfaz: solo contiene la definición de métodos y propiedades, no su implementación, es la
+      funcionalidad de la clase que realiza la conexión entre la interfaz proporcionando la conexión con
+      todos los parámetros de la interfaz
+
+      - decorador: es un patrón estructural que le permite agregar dinámicamente nuevos comportamientos a
+      los objetos colocándolos dentro de objetos colocándolos dentro de objetos envolventes especiales,
+      llamados decoradores, puede envolver objetos innumerables veces, ya que tanto los objetos de
+      destino como los decoradores siguen la misma interfaz, es una expresión que devuelve una función
+      y puede tomar un objetivo, un nombre y un descriptior de propiedad como argumentos, lo aplica,
+      prefijando el decorador con un carácter @ y colocándolo en la parte superior de lo que está 
+      tratando decorar
+
+      - execution context: es el contexto en el cual se está ejecutando o como se encuentra nest en ese 
+      momento en la aplicación y tenemos acceso entre otras cosas a la request
+
+      - objetos: nos permiten definir tipos de datos personalizados con la composición de nuestra
+      elección, hay dos formas en que podemos crear un objeto en typescript, uno está usando el nuevo
+      constructor Object() y otro es usar corchetes de flores - {}
+
+      - clases: en poo pueden verse como la representación de un objeto que existe en la vida real (la
+      abstracción de un objeto que existe en la vida real)
+
+      - diferencias entre clases e interfaces:
+        - la principal diferencia es que la clase me permite crear instancias de esa misma clase,
+        mientras que la interfaz lo único que nos sirve es para añadir reglas y condiciones
+
+      - constructor:
+        - es la función o método que se va a ejecutar cuando creemos una instancia de una clase
+
+      - getters y setters:
+        - son métodos que permiten acceder a datos de los objetos, para leeerlos o asignar nuevos
+        valores, el setter lo que hace es asignarun valor y el getter se encarga de recibir un valor
+
+      - métodos:
+        - son funciones que que están dentro de la clase y al estar dentro de la clase tambien tiene
+        acceso a sus propiedades y otros métodos, es un bloque de código definido dentro de una clase y
+        solo se ejecuta cuando se lo llama, estos dividen una tarea grande en partes pequeñas y realizan
+        la operacion específica de ese programa, este proceso aumenta la reutilización de codigo y mejora
+        el enfoque modular del programa
+
+        - métodos asíncronos: es un método que regresa una promesa
+
+        - inyección de dependencias: es proporcionar una dependencia a la hora de construir una clase,
+        dependency injection (di), es un patrón de diseño orientado a objetos, en el que suministran
+        objetos a una clase en lugar de ser la propia clase que cree dichos objetos
+
+        - solid: es un conjunto popular de principios de diseño que se utilizan en el desarrollo de
+        software orientado a objetos, es un acrónimo que representa cinco puntos clave de la programación
+        orientada a objetos y el diseño:
+          1. principio de responsabilidad única
+          2. principio abierto-cerrado
+          3. principio de sustitución de liskov
+            - puede definirse como: cada clase que hereda de otra puede usarse como su padre sin
+            necesidad de conocer las diferencias entre ellas
+          4. principio de segregación de interfaz
+          5. principio de inversión de dependencia
+        La intención de seguir estos principios es eliminar malos diseños, evitar la refactorización y
+        construir un código más eficiente y fácil de mantener.
+
+        - destructuración: la sintaxis de desestructuración es una expresión de js que permite desempacar
+        valores de arreglos o propiedades de objetos en distintas variables
+
+        - decorador: es un patrón de diseño estructural que permite añadir dinámicamente nuevos
+          comportamientos a objetos colocándolos dentro de objetos especiales que los envuelven
+          (_wrappers_), permite agregar dinámicamente nuevos comportamientos a los objetos colocándolos
+          dentro de objetos envolventes especiales, llamados decoradores, puede envolver objetos
+          innumerables veces ya que tanto los objetos de destino como los decoradores siguen la misma
+          interfaz, son funciones que depende de donde se usen expanden la funcionalidad de una clase,
+          método o propiedades
+
+        - genéricos: básicamente son un tipo de herramienta que les permite crear componentes de código
+        reutilizables que funcionan con varios tipos em lugar de un solo tipo, los genéricos permiten el
+        uso de una verificación de tipo más fuerte, la eliminicación de conversiones y la capacidad de
+        desarrollar algoritmos genéricos
+
+  NESTJS
+    - que es nestjs:
+      - es un marco de trabajo (framework) dogmático (opinionated - espécifica)
+
+      - permite crear aplicaciones del lado del servidor on nodejs
+      
+      - se utiliza typescript preferentemente
+      
+      - nos provee de una capa extra de abstracción sobre los frameworks de express o fastify
+      
+      - esta construido en base a express (por defecto)
+      
+      - no permite tener un mejor soporte, api para su consumo y una facilidad de lectura de código 
+      
+      - nest está fuertemente inspirado en angular
+      
+      - nos ofrece un cli (command line interface) que nos ayuda muchisimo a la creación rápida de
+      componentes, etc, es una herramienta de interfaz de línea de comandos que nos ayuda a inicializar,
+      desarrollar y mantener nuestras aplicaciones en nest, ayuda de varias maneras, incluido el
+      andamiaje del proyecto, su servicio de modo de desarrolo y la creación y agrupación de la
+      aplicación para la distribución de producción
+      
+      - nos ayuda en planear como va a estar nuestro backend en lugar de planificar como funcionan las
+      caracteristicas básicas de cualquier backend (validaciones, conversiones de tipo, bloqueo,
+      autenticación, manejo de errores etc)
+
+    - explicación de archivos y directorios:
+      - dist:
+        -  es el producto final de nuestra aplicación, lo que se podría desplegar en algun hosting y
+        ejecutar ese comando
+
+      - node_modules:
+        - se encuentran todas las dependencias que se instalaron de desarrollo para nuestro proyecto
+
+      - src:
+        - esta carpeta contiene los principales archivos de código relacionados con nuestro aplicación de
+        nestjs esta es la carpeta fuente de  nuestra aplicación de nest, esto significa que este es el
+        lugar donde debemos colocar todo el código fuente de nuestras aplicación, entonces cada
+        componente, clase de servicio, módulos, todo lo que necesitaos poner en esta carpeta
+
+          - módulos: 
+            - agrupan y desacoplan un conjunto de funcionalidad especifíca por dominio, ej:
+            auth.module.ts, encargado de todo lo relacionado con la autenticación
+            - un módulo es una clase anotada con un decorador @Module(), el decorador @Module()
+            proporciona metadatos que nest utiliza para organizar la estructura de la aplicación
+
+
+          - decoradores (estos se pueden aplicar a cualquier nivel):
+            - expanden la funcionalidad de el método, propiedad o clase a la cual se adjuntan
+            - nestjs busca aplicar el principio de dry fuertemente con los decoradores
+            - es una expresión que devuelve una función y puede tomar como argumentos un objetivo, un
+            nombre y un descriptor de propiedad, lo aplica prefijando el decorador con carácter @ y
+            colocándolo en la parte superior de lo que está trantando de decorar
+
+          - controladores:
+            - controlan rutas, son los encargados de escuchar la solicitud y emitir una respuesta, ej.
+            rutas crud
+            - escucha peticiones y emite respuestas
+            - son responsables de manejar las solicitudes entrantes y devolver las respuestas al cliente
+
+          - servicios: 
+            - alojan la lógica de negocio de tal manera que sea reutilizable mediante inyección de
+            dependencias, ej: PeliculasService para todo lo relacionado a obtener, grabar, actualizar o
+            eliminar información de películas
+            - es una clase que tenemos que inyectar para poder trabajar mi información de la lógica de
+            negocio
+
+          - providers: 
+            - son un concepto fundamental en nest, pueden tratarse como provider: services, respositores,
+            factories, helpers, etc, la idea principal de un proveedor es que se pueda inyectar como
+            dependencia; esto significa que los objetos pueden crear varias relaciones entre sí, y la
+            función de "conectar" instancias de objetos puede delegarse en gran medida al sistema de
+            tiempo de ejecución de nest
+            - básicamente son clases que se pueden inyectar
+            - todos los servicios son providers pero no todos los providers son servicios, es decir no
+            todos van a tener la lógica de negocio
+            - se utilizan cuando queremos inyectar dependencias
+
+          - Inyección de dependencias:
+            - es una técnica de inversión de control (IoC) en la que delega la creación de instancias de
+            dependencias al contenedor de IoC (en nuestro caso, el sistema de tiempo de ejecución de
+            nestjs), en lugar de hacerlo en su propio código de forma imperativa
+
+          - Pipes:
+            - transformar la data recibida en requests, para asegurar un tipo, valor o instancia de un
+            objeto, ej: transformar a números, validaciones, etc
+            - es una clase anotada con el decorador @Injectable(), que implementa la Interfaz
+            pipeTransform
+            - existen dos casos de uso:
+              1. transformation: tansforma los datos de entrada a la forma deseada (por ejemplo, de
+              cadena a entero)
+              2. validación: evalua los datos de entrada y, si son válidos, simplemente se pasan sin
+              cambios, de lo contrario lanza una excepción
+          
+          - Custom pipe:
+            - podemos construir nuestros propios custom pipes 
+
+          - Exception Filters:
+            - maneja los errores de código en mensajes de respuesta http, usualmente nest ya incluye
+            todos los casos de uso comunes,pero se pueden expandir basado en las necesidades
+            - nest viene con una capa de excepciones integrada que es responsable de procesar todas las
+            excepciones no controladas en una aplicación, cuando el código de la aplicación no maneja una
+            excepción, esta capa la detecta y luego envía automáticamente una respuesta adecuada y fácil
+            de usar 
+              - BadRequestException                     - UnauthorizedException
+              - NotFoundException                       - ForbbidenException
+              - RequestTimeoutException                 - GoneException
+              - PayloadTooLargeException                - InternalServerErrorException
+
+              
+          - main.ts: 
+            - es el punto de entrada de nuestra aplicación
+            - es el archivo principal de nuestra aplicación en el cual se crea la aplicación de nest
+
+      - test:
+        - para realizar pruebas
+        - e2e testing significa hacer la prueba de inicio a fin desde que llega la petición hasta que
+        lanza el resultado
+
+      - .eslintrc.js
+        - es un archivo archivo de configuración de nuestro lintr
+        - lintr se reduce a una serie de buenas prácticas que la gente de nest configuró por nosotros y
+        las recomienda para que al escribir el código se sigan ciertas reglas y estándares
+
+      - .gitignore
+        - este archivo le dice a git que es un manejador de versionamiento (controlador de versiones) el
+        cual le dice que archivos o directorios no debe darle seguimiento para no mantener un historial
+        de cambios sobre dichos archivos o directorios
+
+      - .prettierrc
+        - es el archivo de configuración de prettier el cual a la mano de eslint nos ayuda a escribir
+        código siguiendo las buenas prácticas recomendadas por la gente de nest
+      
+      - nest-cli.json
+        - archivo de configuración de nest cli
+      
+      - package.json
+        - definimos quien es el autor, descripción del proyecto, versión en la que se encuentra, nombre
+        del proyecto
+        - scripts para ejecutar comandos
+        - dependencias: son paquetes que son necesarios para nuestro proyecto
+        - devdependencias: estos son paquetes que al hacer el build de producción no forman parte dentro
+        nuestro filesystem en la carpeta de distribución (dist)
+        - jest es un framework de testing de javascript, permite escribir pruebas con una api accesible,
+        familiar y rica en funciones que brinda resultados rapidamente
+
+      - README.md
+        - es como un puntro de entrada para que otros desarrolladores sepan las configuraciones para
+        correr el proyecto por ejemplo un npm install, etc
+        - se utiliza cuando queremos enseñarle a otros desarrolladores o miembros de un proyeco que
+        comandos tiene que utilizar para levantar el proyecto de desarrollo o para generar el build de
+        producción
+        - markdown: es como una version supersimplicada de html, es un lenguaje simple que se utiliza
+        para crear texto enriquecido (por ejemplo html) con un editor de texto sin formato, permite
+        darnos un formato básico de texto utilizando símbolos conocidos y accesibles en todos los
+        teclados, es un sintaxis sencilla para escribir textos enriquecidos, con formato, que luego se
+        puede convertir fácilmente en HTML para ser visualizado en los navegadores
+      
+      - tsconfig.build.json
+        - extiende del ts config y que contiene la infomación de la version de producción
+        - cuando se hace el build de producción utiliza este archivo de forma automática e incluye todos
+        los archivos que están en node_modules, test, dist y cualquier archivo que tenga la extensión de
+        spec.ts (que son archivos de pruebass)
+      
+      - tsconfig.json
+        - son las reglas con las cuales typescript se va a regir (que version de ecmascript ejecutar, la
+        forma de ejecutar módulos)
+      
+      - yarn.lock
+        - le dice a yarn como fue creado todos los módulos de node
+
+      - estructura de módulo recomendado:
+        - src
+          - common
+            - decorators
+            - dtos
+            - filters
+            - guards
+            - interceptors
+            - middleware
+            - pipes
+          - common.controller.ts
+          - common.module.ts
+          - common.service.ts
+
+    - DTOs
+      - Data Transfer Object
+      - es un objeto que nos sirve para transferir en diferentes piezas de nuestra aplicación
+      - es una simple clase que tiene ciertas propiedades y nosotros le definimos como quiero que luzca
+      cada una de esas propiedades
+      - es un objeto que nos sirve para pasarlo del controlador al servicio, clase, etc
+      - es un objeto que define cómo se enviarán los datos a través de la red, podríamos determinar el
+      esquema dto mediante el uso de interfaces de typescript o mediante clases simples
+      - se utiliza para validar requests, por sí solo es más una guía para el desarrollador y que
+      aquellos que la consumen la api para saber qué tipo de forma espera tener el cuerpo de la
+      solicitud, ¡en realidad no ejecuta ninguna validación por sí solo!
+
+    - Entities
+      - se puede ver como la representación de una tabla de base datos (es una abstracción de como
+      nosotros terminaríamos insertando en la base de datos)
+      - se puede definir como un recurso con el cual vamos trabajar en una aplicación, que se asociará
+      directamente con una tabla de una base de datos, o una colección en el caso que se trabje con
+      mongodb 
+
+
+  POSTGRESQL
+    - también llamado postgresm es un sistema de gestión de bases de datos relacional orientado a objetos
+    y de código abierto, publicado bajo la licencia de PostgreSQL similar a la BSD o la MIT
+
+    - la principal diferencia con MySQL es que esta es una base de datos puramente relacional, mientras
+      que PostgreSQL es una base de datos relacional de objetos, PostgreSQL ofrece tipos de datos más
+      sofisticafos y permite que los objetos hereden propiedades, por otro lado, también hace que sea
+      más complejo trabajar con PostgreSQL
+
+    - alberga un único motor de almacenamiento compatible con ACID
+
+  TYPEORM
+    - es un orm (object-relational-mapper) que facilita la vinculación de nuestra aplicación typescript
+     a una base de datos relacional, typeorm es compatible con mysql, sqlite, postgres, ms sql server
+     y muchas otras opciones
+
+     - el mapeo objeto-relacional (orm) es una técnica de programación para convertir datos entre el
+      sistema de tipos utilizado en un lenguaje de programación orientado a objetos y la utilización de
+      una base de datos relacional como motor de persistencia
+
+      - un ORM es un modelo de programación que permite mapear las estructuras de una base de datos
+        relacional (SQL Server, Oracle, MySQL, etc.), en adelante RDBMS (Relational Database Management
+        System), sobre una estructura lógica de entidades con el objeto de simplificar y acelerar el
+        desarrollo de nuestras aplicaciones.
+
+      - querybuilder:
+        - es una de la características más poderosas de typeorm, nos permite crear consultas sql
+          utilizando una sintaxis elegante y conveniente, ejecutarlas y obtener entidades transformadas
+          automáticamente
+        - es un método/función que nos permite crear queries, con la seguridad que me está escapando los
+          carácteres especiales para evitar inyección sql
+
+      - eager and lazy relations:
+        - eager relations se cargan autmáticamente cada vez que cargamos entidades desde la base de datos
+        - las lazy relations se cargan una vez que se accede a ellas, dichas relaciones deben tener
+          promesa como tipo: almacena su valor en una promesa y, cuando la carga, también se devuelve 
+          una promesa
+
+    - generic repository pattern:
+      - los repositorios son clases o componentes que encapsulan la lógica necesaria para acceder a
+        las fuentes de datos, centralizan la funcionalidad de acceso a datos comunes, lo que proporciona
+        una mejor capacidad de mantenimiento y desacopla la infraestructura o la tecnología utilizada
+        acceder a las bases de datos desde la capa del modelo de dominio
+
+    - queryrunner:
+      - cada instanacia de query runner toma una sola conexión del conjunto de conexiones, si rdbms
+      admite el conjunto de conexiones, para las bases de datos que no admiten grupos de conexiones, 
+      utiliza la misma conexión en todas las fuentes de datos
+      - nos permite ejecutar x cantidad de instrucciones sql (queries) y decirle que si todo sale bien
+        impacte a la base de datos, pero si una sale mal hacer un rollback y revertir todo
+
+    - datasource:
+      - es una clase de typeorm para realizar consultas
+      - al inyectarlo sabe cual es la cadena de conexión de base de datos que estamos utilizando, sabe
+        exactamente que usuario uso y todo lo demas (es decir tiene la misma configuración que nuestros
+        repositorios) y se utiliza para crear un queryrunner
+    
+    - transactions:
+      - son una serie de queries que pueden impactar en la base de datos
+
+    - multer:
+      - multer maneja los datos publicados en el formato multipart/form-data, que se usa principalmente
+      cargar archivos a través de una solicitud http post, este módulo es totalmente configurable y puede
+      ajustar su comportamiento a los requisitos de su aplicación
+
+
+
+
+
+    
+  NOTAS:
+
+    - npm vs yarn:
+      - la principal diferencia entre npm y yarn radica en el redimiento de la seguridad, mientras que
+      npm instala todos los paquetes secuencialmente, yarn realiza una instalación paralela lo que
+      resulta en una mejor velocidad y redimiento, npm ha intenta solucionar vulnerabilidades, pero aun
+      así yarn se considera más seguro que npm
+
+    - principios de diseño del software:
+
+      - kiss: es un acrónimo de la frase inglesa "keep it simple, stupid", este patrón  los que nos dice
+      es que cualquier sistema va a funcionar mejor si se mantiene sencillos qie si se vuelve complejo,
+      es decir que la sencillez tiene que se una meta en el desarrollo y que la complejidad inecesaria
+      debe ser eliminada
+
+      - dry: quiere decir "don't repeat yourself", cada pieza de funcionalidad debe tener una única, no
+      ambigua y representativa identidad dentro del sistema, si se aplica este patrón de forma correcta
+      un cambio en cualquier parte de la funcionalidad de un programa no incluye cambios en partes que no
+      tengan una relación lógica con la funcionalidad cambiada, básicamente lo que se intenta evitar con
+      este principio es que no se duplique código, por que lo que ocurre luego que el mantenimiento será
+      mucho más difícil ya que no sabremos donde tenemos que cmabiar cosas por que no están definidad
+      claramente
+
+      - solid:
+        - son seis principios del desarrollo orientado a objetos que aplicados juntos facilitan que el
+        desarrollo sea más fácil de mantener y de extender durante el tiempo:
+
+          1. Principio de responsabilidad única (single resposibility principle):
+            - este principio establece que una clase sólo debe tener una responsabilidad sobre el total
+            de la funcionalidad, es decir que para contener el cambio debemos tener claramente definidad
+            las responsabilidades
+          
+          2. Principio de abierto/cerrado (Open/closed principle):
+            - una clase está cerrada a la modificación pero abierta para extenderla, es decir la clase
+            abstracta o interfaz queda cerrada a la modificación pero está abierta a su extensión o
+            implementación de la interfaz
+
+          3. Pincipio de sustitución de Liskov (Liskov substitution ptinciple):
+            - cada clase que hereda de otra puede usarse como padre sin necesidad de conocer la
+            diferencia entre ellas, es decir que si una clase es subtipo de otra, los objetos de esta
+            clase subtitpo podrían sustituir a los objetos de la clase padre sin que el programa sufriera
+            ningún cambio de comportamiento
+
+          4. Principio de segregación de la interfaz (Interface segregation principle):
+            - dice que los clientes de un programa dado sólo deberían conocer de éste aquellos métodos
+            que realmente usan, para esto no de deben hacer interfaces para cada propósito general si
+            esto ocurre habrá que dividirlas en varias interfaces para cada propósito específico, este
+            principio lo que nos facilita es tener un sistema desacoplado de los sistemas de los que
+            depende, de forma que sea más fácil modificarlo, redesplegarlo
+
+          5. Principio de inversión de la dependencia (Depdenncy inversion principle):
+            - dice que se debe depender de abstracciones no de implementaciones, se le llama así por que
+            se invierte el flujo tradicional de programación mientras que tradicionalmente era el
+            programador que de forma secuencial decidía cuando se iban instanciando las clases ahora lo
+            que ocurre que determinadas sucesos provocan que através de una entidad externa en este caso
+            un framework lleven a cabo las acciones de control necesarias para responder estos sucesos
+
+          6. La inyección de dependencias
+            - es un método que sigue este principio, hay bastante confusión con respecto a estos dos
+            términos no son lo mismo, típicamente la forma de implementarlo es a través de un framework
+            que pone un contenedor de objetos que se van instanciando de forma automáticamente siguiendo
+            una configuración que está especificada en un archivo de configuración de ese framework
+
+      - http:
+        - de sus siglas en inglés: "Hypertext Transfer Protocol". es el nombre de un protocolo el cual
+        nos permite realizar una petición de datos y recursos, como pueden ser documentos HTML
+        - los verbos http comprenden una parte importante de nuestra restricción de "interfaz uniforme" y
+        nos brinda la contrapartida de acción para el recurso basado en sustantivos, los más utilizados
+        son POST, GET, PUT, PATCH y DELETE
+
+      - api restful:
+        una api de rest o api de restful, es una interfaz de programación de aplicaciones (API o WEB) que
+        se ajusta a los límites de la arquitectura REST y permite la interacción con los servicios web de
+        restful, el informático roy fielding es el creador de la transferencia de estado representacional
+        (rest)
+
+      - rest:
+        - es una interfaz para conectar varios sitemas basados en el procolo http (uno de los procolos
+        más antiguos) y nos sirve para obtener y generar datos y operaciones, devolviendo esos datos en
+        formatos muy específicos, como xml y json
+        - la transferencia de estado representacional o rest es un estilo de arquitectura de software
+        para sistemas hipermedia distribuidos por la world wide web
+
+      - api:
+        - son conjuntos de definiciones y protocolos que se utilizan para diseñar e integrar el software
+        de las aplicaciones, suele considerarse como el contrato entre el proveedor de información y el
+        usuario, donde establece el contenido que se necesita por parte del consumidor (la llamada) y el
+        que requiere el productor (la respuesta)
+        - la interfaz de programación de aplicaciones, conocida tambien por la sigla api (application
+        programming interface) es un conjunto de subrutinas, funciones y procedimientos que ofrece cierta
+        biblioteca para ser utilizada por otro software como una capa de abstracción
+        - son mecanismos que permiten a dos componentes de software comunicarse entre sí mediante un
+        conjunto de definiciones y protocolos
+
+      - endpoint:
+        - cada aplicación con la que desea integrarse está representada por un endpoint http, un endpoint
+        proporciona una forma sencilla de definir la url base y las credenciales para usar al realizar
+        solicitudes http desde un script de transformación en integration builder o un paso en flow
+        designer
+
+      - crud:
+        - en informática es el acrónimo de "Crear, Leer, Actualizar y Borrar", que se usa para referirse
+        a las funciones básicas en bases de datos o la capa de persistencia en un software
+
+      - uuid:
+        - nos permite generar ids únicos, no importan si se crean en el mismo instante, siempre generan
+        ids únicos
+
+      - readonly:
+        - typescript incluye la palabra clave de solo lectura que hace que una propiedad sea de solo
+        lectura en la clase, type o interface
+        - se puede acceder fuera de su clase, pero su valor no se puede cambiar
+        - dado que los miembros de solo lectura no se pueden cambiar fuera de la clase, deben
+        inicializarse en la declaración o inicializarse dentro del constructor de la clase
+
+      - class-validator
+        - permite el uso de validación basada en decoradores y no decoradores
+
+      - class-transformer:
+        - permite transformar un objeto simple en alguna instancia de clase y viceversa, tambien permite
+        seerializar/deserializar objetos según criterios, esta herramienta es muy util tanto en el
+        frontend como en el backend
+
+        - configuración global de pipes:
+          - whiteList: remueve todo lo que no está incluído en los DTOs
+          - fobidNonWhiteListed: retorna bad request si hay propiedades en el objeto no requeridas
+
+        - nestjs mapped-types:
+          - nos ayuda a nosotros a poder extender un dto basado en otro dto, con excepción de que el
+          partial type hace que todas las propiedades que tenga el dto del cual estoy expandiendolo sean
+          opcionales
+
+        - seed:
+          - es el proceso de llenar una base de datos con un conjunto inicial de datos
+          - es un proceso en el que se proporciona un conjunto inicial de datos a una base de datos
+          cuando se instala, es especialmente útil cuando queremos llenar la base de datos con datos que
+          queremos desarrollar en el futuro, entonces nuestro objetivo es "alimentar" la base de datos
+          con datos ficticios en su inicialización
+          -
+
+        - docker:
+          - es una plataforma de software que permite crear, probar e implementar aplicaciones
+          rápidamente
+          - empaqueta el software en unidades estandarizadas llamadas contenedores que tienen todo lo que
+          el software necesita para ejecutarse, incluidas bibliotecas, herramientas del sistema, código y
+          tiempo de ejecución
+          - es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de
+          contenedores de software, proporcionando una capa adicional de abstracción y automatización de
+          virtualización de aplicaciones en múltiples sistemas operativos
+
+        - dockerfile:
+          - dockerfile es un documento de texto que contiene todos los comandos que un usuario podría
+          llamar en la línea de comandos para ensamblar una imagen
+          - dockerimage: es un archivo que se utiliza para ejecutar código en un contenedor de docker,
+          las imágenes de docker actúan como un conjunto de instrucciones para crear un contenedor de
+          docker, como una plantilla, también actúan como punto de partida cuando se usa docker, es
+          comparable a una instantena en entornos de máquinas virtuales (vm)
+          - dockercontainer: es un paquete de software ligero, independiente y ejecutable que incluye
+          todo lo necesario para ejecutar una aplicación: código, tiempo de ejecución, herramientas del
+          sistema, bibliotecas del sistema y configuraciones
+
+        - .dockerignore:
+          -  contiene todos los archivos que yo no quiero que los comando COPY en el dockerfile muevan
+          - permite excluir archivos del contexto como un archivo, gitignore file le permite excluir
+          archivos de su repositorio git, ayuda a que compilación sea más rápida liviana al excluir del
+          contexto archivos grandes o repositorios que no se usan en la compilación
+
+        - .gitkeep:
+          - gitkepp es para resolver el problema de que git no envía carpetas vacías a repositorios dvcs
+            remotos como github o gitlab, para que git reconozca un directorio vació, la regla no escrita
+            no es poner un archivo llamado .gitkeep en él
+
+        - readme.md
+          - un archivo readme contiene información acerca de otros archivos en un directorio, es una
+          forma de documentación de software, usualmente en un archivo de texto plano llamado READ.ME,
+          README.TXT, README.md, README.1ST o simplemente README, en ocasiones en español puede venir
+          traducido como LEEME.TXT
+          - suelen contener información importante sobre el sistema, proyecto o software al que se
+          refieren
+          - nos ayuda a nosotros mismos u otros desarrolladores poder tomar el proyecto y poder trabajar
+          de manera local en su computadora
+
+        mongodb:
+          - es un sistema de base de datos nosql orientada a documentos, apareció a mediados de la decada
+          de los 2000, se utiliza para almacenar volúmenes masivos de datos, a diferencia de una base de
+          datos relacional sql tradicional, mongodb no se basa en tablas y columnas, los datos se
+          almacenan como colecciones y documentos
+
+        mongoose:
+          - es una librería para node.js que nos permite escribir consultas para una base de datos de
+          mongodb, con caracteristicas como validaciones, construcción de quieres, middlewares,
+          conversión de tipos y algunas otrasm que enriquecen la funcionalidad de la base de datos
+
+        mongodb atlas:
+          - es una base de datos en la nube completamente administrada que maneja toda la complejidad d
+          implementar, administrar y reparar sus implementaciones en el proveedor de servicios en la nube
+          de nuestra elección (aws, azure y gcp), mongodb atlas es la mejor manera de implementar,
+          ejecutar y escalar mongodb en la nube
+
+        postman:
+          - es una plataforma de api para que los desarrolladores diseñen, construyan, prueben e iteren
+          sus api
+          - es un cliente de api que facilita a los desarrolladores crear, compartir, probar y documentar
+          las api, con esta solución de código abierto, los usuarios pueden crear y guardar solicitudes
+          http/s simples y complejas, así como leer us respuestass
+
+        env:
+          - los archivos env contienen credenciales en formato clave-valor para los servicios utilizados
+          por el programa que están creando
+          - están destinados a almacenarse localmente y no cargarse a repositorios de códigos en línea
+          para que todos los lean
+          - se usa para almacenar variables secretas, en aplicaciones de software es una buena práctica
+          como un en el desarrollo de software, estas variables pueden ser credenciales de bases de
+          datos, direcciones urls, ip addresses o hosts, o claves secretas para integraciones de terceros
+
+        vairables de entorno:
+          - las variables de entorno son cadenas que contienen información acerca del entorno para el
+          sistema y el usuario que a iniciado sesión en ese momento, algunos programas de software usan
+          la información para determinar donde se colocan los archivos (como los archivos temporales)
+          - son un conjunto de entorno de valores que contienen información útil del programa y de los
+          sistemas que están utilizando los usuarios para su ejecución,  afectan a cualquier software y
+          resultan especialmente útiles de cara al backend
+          - es una variable cuyo valor se establece fuera del programa, generalmente a través de la
+          funcionalidad integrada en el sistema operativo o microservicio
+          - se compone de un pair name/value y se puede crear cualquier número y estar disponible como
+          referencia en un momento dado
+
+        joi ValidationSchema:
+          - joiPipe fácil de usar como interfaz entre joy y nestjs con construcción de esquema opcional
+          basada en decoradores, basado en joi-class-decorators
+          - es la herramienta más poderosa para la validación de datos en javascript, este módulo permite
+          crear esquemas de datos usando un lenguaje simple comprensible e intuitivo
+          - nos sirve para validar, lanzar errores, poner errores por defecto y en pocos revisar que un
+          objeto luzca de la manera esperada (en nuestro caso variables de entorno)
+
+        heroku:
+          - es una plataforma de servicios en la nube (conocidos como PaaS o Platform as a Service) que
+          permite manejar los servidores y configuraciones, escalamiento y la administración, su
+          popularidad ja crecido en los últimos años debido a su facilidad de uso y versatilidad para
+          distintos proyectos
+
+        forRoot:
+          - el método forRoot() admite todas las propiedades de configuración expuestas por el
+            constructor DataSource del paquete TypeOrm 
+          - se usa cuando se espera configurar un módulo dinámico una ves y reutilizar esa configuración
+            en varios lugares
+
+        forFeature:
+          - se utiliza cuando queremos usar la configuración de forRoot de un módulo dinámico, pero
+            necesitamos modificar algunos detalles de configuración en el módulo de llamada
+
+        - logger:
+          - nest viene con un registrador basado en texto incorporado que se usa durante el arranque de
+            la aplicación y varias otras circustancias como mostras excepciones destacadas (es decir 
+            registro del sistema), esta funcionalidad se proporciona a través de la clase logger en el 
+            paquete @nestjs/common
+
+        - json web token (jwt):
+          - es un estándar de internet propuesto para crear datos con firma opcional y/o encriptación
+          opcional cuya carga útil contiene JSON que afirma una cierta cantidad de reclamos, los tokens 
+          se firman meidante un secreto privada o una clave pública/privada
+          - es un estándar abierto que define una compacta y autónoma de transmitir información de forma
+          segura entre las partes como un objeto json, esta información se puede verificar y confiar
+          probar por que está firmada digitalmente
+          - es un string que está firmado el cual va a saber mi backend si está manipulado o no, ademas
+          de temer cierta información que nos ayudarpa a saber que usuario está intentando logearse
+
+        - passport node:
+          - es un middleware de autenticación para nodejs, extremadamente flexible y modular, passport se
+          puede colocar discretamente en cualquier aplicación web basada en express, un conjunto integral
+          de estrategias admite la autenticación mediante un nombre de usuarios y contraseña, facebook,
+          twitter y más
+          - un middleware en node es una función que tendrá todo el acceso para solicitar un objeto,
+          reponser a un objeto y pasar a la siguiente función de middleware en el ciclo de solicitud y
+          respuesta de la aplicación
+
+        - jwtstrategy:
+          - es una forma de definir un algoritmo/lógica personalizado para autenticar a los usuarios, 
+          passport tiene muchas estrategias como jwt, facebook, google y más, extiende una estrategia y
+          agrega su lógica personalizada, como de dónde obtener al usuario, cómo validar al usuario y las
+          opciones que se pasan a passport
+
+        - bearer token:
+          - la terminología bearer token, es un token de seguridad con la propiedad de que cualquier
+            parte en posesión del token (a "bearer" = portador) puede utilizar el token de cualquier 
+            forma que pueda hacerlo cualquier otra parte en posesión del mismo, el uso de un bearer token
+            no requiere que el bearer demuestre la posesión del material de la clave 
+            criptográfica (prueba de posesión)
+          - los bearer tokens permiten que las solicitudes se autentiquen mediante una clave de acceso,
+            como un web token json (jwt), el token es una cadena de texto, incluida en el encabezado en
+            la solicitud
+
+        - oauth:
+          - es un protocolo o marco de autorización estándar abierto que describe cómo los servicios no
+          relacionados pueden permitir la forma segura el acceso autenticado a sus activos sin compartir
+          realmente la credencial de inicio de sesión única relacionada inicial
+          - es un estándar tecnológico que le permite compartir información entre servicios sin exponer
+          su contraseña
+
+        - difference between jwt and oauth:
+          - cuando un usuario autentica su aplicación (cliente), el servidor de autenticación va y genera
+          un token para nosotros, los bearer tokens son el tipo predominante de token de acceso que se 
+          usa con oauth 2.0, un bearer token básicamente dice "dar acceso al portador de este token"
+          - la diferencia es que la autenticación jwt no está estandarizada ni define como el cliente 
+          obtiene el token en primer lugar, ouath define varias formas en las que el cliente puede
+          obtener un token de acceso del llamado servidor de autorización (autorization server)
+
+
+
+        - guards:
+          - los guards son usados para permitir o prevenir acceso a una ruta, ej. aquí es donde se debe
+          autorizar una solicitud
+          - un guard es una clase anotada con el decorador @Injectable(), que implementa la interfaz
+          CanActivate, los guardias tienen una sola responsabilidad, determinan si una solicitud dada
+          será manejada por el controlador de ruta o no, dependiendo de ciertas condiciones (con
+          permisos, roles, acl, etc) presentes en tiempo de ejecución 
+
+
+  RECURSOS:
+    - https://gist.github.com/Klerith/c0ef4f48d986e2cf3308bb54fff84ea5
+    - file:///C:/Users/Admin/Downloads/Nest-cheatsheet.pdf
+    - https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+    - https://docs.nestjs.com/techniques/mongodb
+    - https://pokeapi.co/
+    - https://www.mongodb.com/atlas/database
+    - https://www.heroku.com/
+    - https://gist.github.com/Klerith/e7861738c93712840ab3a38674843490
+    - https://typeorm.io/
+    - https://orkhan.gitbook.io/typeorm/ 
+    - https://jwt.io/

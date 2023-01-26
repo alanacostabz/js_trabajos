@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevos Tipos de Datos en JavaScript</title>
+</head>
+
+<body>
+  <h1>Nuevos Tipos de Datos en JavaScript</h1>
+
+  <script>
+    /*
+      Weak - significa que solo pueden almacenar referencias débiles es decir que las llaves deben de ser de tipo objeto, esto permite al recolector de basura de JS que al ser una referencia debil al momento en que se hayan nulificado o limpiado de la lógica de nuestra programación las limpie y esto hace una mejora del rendimiento de nuestra aplicación
+
+      Los wewaksets y weakmaps tienen algunas carencias:
+        - No podemos iterar sobre los valores (no podemos utilizar ni forof, ni foreach como en los maps o sets normales)
+        - Tampoco podemos borrar todos los elementos de un jalón (solo podemos eliminar uno por uno)
+        - Tampoco podemos verificar su tamaño
+
+      NOTA:
+        - Un ejemplo claro de los weakmap es el manejor de estado en un componente hablando de react, vue, angular, la diferencia es que si yo en una variable de estado en mi aplicación de react, vue, etc. La he declarado como objeto, acá en vanilla JS utilizara un weakmap, si una variable de estado en donde almaceno información en estos frameworks la he declarado como arreglo pues acá en vanilla JS utilizaría un weakset. Uno funciona como objeto otro como arreglo
+    */
+
+    // WEAKSET
+    // const ws = new WeakSet(
+    //   [1,2,3,4,5, true, false, {}, "hola", "HOla"]
+    // );
+    // const ws = new WeakSet();
+    // llave = { "valor1": 1 };
+    // llavealor2 = { "valor2": 2 };
+    // llavealor3 = { "valor3": 3 };
+
+    // ws.add(valor1);
+    // ws.add(valor2);
+
+    // console.log(ws);
+
+    // console.log(ws.has(valor1));
+    // console.log(ws.has(valor3));
+
+    // ws.delete(valor2);
+    // console.log(ws);
+
+    // ws.add(valor2);
+    // ws.add(valor3);
+    // console.log(ws);
+
+    // setInterval(() => {
+    //   console.log(ws);
+    // }, 1000);
+
+    // setTimeout(() => {
+    //   valor1 = null;
+    //   valor2 = null;
+    //   valor3 = null;
+    // }, 5000);
+
+
+    // WEAKMAP
+    // const wm = new WeakMap([
+    //   ["nombre", "messi"],
+    //   ["edad", 34],
+    //   ["nacionalidad", "argentina"],
+    //   [700, "goles"],
+    // ]);
+    // const wm = new WeakMap();
+    // let llave1 = {};
+    // let llave2 = {};
+    // let llave3 = {};
+
+    // wm.set(llave1, 1);
+    // wm.set(llave2, 2);
+    // console.log(wm);
+    // console.log(wm.has(llave3));
+
+    // console.log(wm.get(llave1));
+    // console.log(wm.get(llave2));
+    // console.log(wm.get(llave3));
+
+    // wm.delete(llave2);
+    // console.log(wm);
+
+    // wm.set(llave2, 2);
+    // wm.set(llave2, 3);
+    // console.log(wm);
+
+    // setInterval(() => {
+    //   console.log(wm);
+    // }, 1000);
+
+    // setTimeout(() => {
+    //   llave1 = null;
+    //   llave2 = null;
+    //   llave3 = null;
+    // }, 5000);
+
+  </script>
+</body>
+
+</html>

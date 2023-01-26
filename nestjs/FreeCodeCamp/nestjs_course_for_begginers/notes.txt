@@ -1,0 +1,102 @@
+NESTJS COURSE FOR BEGINNERS - CREATE A REST API | FREE CODE CAMP
+
+  TOPICS:
+    - crud rest api with nest js
+    - production oriented
+    - with jwt authentication
+    - e2e tests
+    - dev database setup
+    - basic javascript required
+
+  WHAT IS NEST JS?
+    - node js backend
+    - typescript friendly
+    - solves architecture
+    - uses express js
+    - scalable & maintainable
+    - modular structure
+    - uses dependency injection
+    - "angukar for backend"
+    - it's a framework for building scalable nodejs web applications with typescript
+    - in a nutshel it allows us to create testable, scalable and easily maintainable applications
+
+  WHY USE NEST JS
+    - structure
+    - modularity
+    - typescript
+    - graph ql
+    - microservices
+    - rest api
+    - documentation
+    - popularity / community
+
+  WHAT WE BUILD
+    - rest api with nestjs
+    - crid api: create, read, update, delete
+    - bookmarks api
+
+  CONCEPTS
+    - nestjs: it's a progressive node.js framework for building efficient, reliable and scalable server-side applications
+
+    - prisma: is a next-generation object-relational mapper (orm) that claims to help developers build faster and make fewer errors, is an open-source ORM that drastically simplifies data modeling, migrations, and data access for sql databases in node, prisma takes a diffeent approach to orms compared to traditional orms, it uses a custom schema definition language (sdl) that automatically writes migrations and generates type-safe code
+
+    - module: is a class annotated with @Module() decorator, it's a mechanism to group components, directives, pipes and services that are related, in such a way that can be combined with other modules to create an application, the @Module() decorator provides metadata that nest makes use of the organize the application structure
+
+    - @Module() decorators takes a single object whose properties describe the module
+      - providers: the providers that will be instantiated by the nest injector and that may be shared at least across this module
+      
+      - controllers: the set of controllers defined in this module which have to be instantiated
+
+      - imports: the list of imported modules that export providers which are required in this module
+
+      - exports: the subset of providers that are provided by this module and should be available in other modules which import this module, you can use the provider itself or just its token (provide value)
+
+    - controllers: are responsible for handling incoming requests and returning responses to the client
+
+    - the @Global() decorator makes the module global-scoped, global modules should be registered only once, generally by the root or core module
+
+    - @Body(): we should use this decorator to instruct nestjs that we need the body values from the request, doing this will bind the body values from the request to the body parameter in the function method
+
+    - @Req(): req body object allows ous to access data in a string or JSON object from the client side, we generally use the req. body to receive data through POST and PUT requests in the express server
+
+    - providers: are fundamental concept in nest, many of the basic nest classes may be treated as a provider - services, respositories, factories, helpers, and so on, the main idea of a provider is that it can be injected as a dependency; this means objects can create various relationships with each other, and the function of "wiring up" instances of objects can largely be delegated to the nest runtime system
+
+    - decorators: are a design pattern that is used to separate modification or decoration of a class  without modifying the original source code, are functions that allow a service, directive or filter to be modified prior to its usage
+
+    - dependency injection: is an inversion of control (IoC) technique wherein you delegate installation of dependencies to the IoC container (in our case, the NestJS runtime system), instead of doing it in your own code imperatively, in other words, it is a design pattern that takes responsibilty for instatiation from one component and delgates it to another
+
+    - services: are objects that get instantiated just once during the lifetime of an application, they contian methods that maintain data throughout the life of an application, i.e. data available all the time, they are intended o provide a layer of access to the data that applications, need to funciton, through the serives we can free the controllers from code and manage to decouple these from the data storage techonologies that we are using
+
+    - dto: is an object that defines how the data will be sent over the network, we could determine the dto schema using typescript interfaces, or by simple classes interestingly, we recommend using class here
+
+    - pipes: is a class annotated with the @Injectable() decorator, which implements the PipeTransform interface, pipes have two typical use cases: transformation: transform input data to the desired form (e.g., from string to integer)
+
+    - guards: a guard is a class annotated with the @Injectable() decorator, which implements the CanActivate interface, guards have a single responsibilty, they determine whether a given request will be handled by the router handler or not, depending on certains conditions (like permissions, roles, ACLs, etc.) present at run-time
+
+    - jwt: json web token is an open standard that defines and self-contained way for securely transmitting information between parties as a json object, this information can be verified and trusted beacuse is digitally signed, jwt are a good way of securely transmitting information between parties because they can be signed, which means we can be sure that the senders are who they say they are, additionally, the structure of a jwt allows us to verify that the content hasn't been tampered with, is authentication middleware for node.js, extremely flexible and modular, can be unobtrusvely dropped into any express-based web application, a comprehensive set of strategies support authentication using a username and password, facebook, twitter and more
+
+    - passport: is authentication middleware for nodejs, extremely flexible and modular, passport can be unobtrusvely dropped into any express-based web application, a comprehensive set of stategies support authentication using a username and password, facebook, twitter and more
+
+    .env: the .env file contains the individual user enviroment variables that override the variables set in the /etc/enviroment file, we can customize our enviroment variables  as desired by modifying our env file, the dotenv package for handling enviroment variables is the most popular option in the node.js community, you can create an .env file in the application's root directory that contans key/value pairs defining the project's required enviroment variable
+
+    - forRoot: the forRoot sets up the loading of the .env file and the forChild uses it in another module, the problem is that forChild is called before forRoot. The ConfigService would be injected with missing config because forRoot hasn't executed first > appModule > ConfigModule
+
+    - strategy: it is a way to define custom algoritm/logic to athenticate users, passport has a lot of strategies like jwt, facebook, google and more, you extend a strategy and add your custom logic like from where to get the user, how to validate the user and options to passport
+
+    - imsonia: is afree tool for testeing and validation results of restful applications that comes with exceptional features like sharable enviroments, plugin hub, end to end encryptionm and mucho more (like postman)
+
+    - docker: is a software platform that allows us to build, and deploy applications quicklym docker packages software into standarized units called containers that have everything the software needs to run including libraries, systems tools, code, and runtime
+
+    - e2e: end-to-end testing, also know as e2e testing, is a metodology used for ensuring that applications behave as expected and that the flow of data is maintained for all kinds of user tasks and processes, this type of testing approach starts from the end user's perspective and simulates a real-world scenario
+
+    - pactumjs: is a rest api testing tool used to automate e2e, integration, contact & component (or service level) tests
+
+
+  RESOURCES
+    - https://nestjs.com/
+    - https://docs.nestjs.com/
+    - https://www.prisma.io/
+    - https://www.toptal.com/developers/gitignore
+    - https://jwt.io/introduction
+    - https://www.passportjs.org/
+    - https://pactumjs.github.io/

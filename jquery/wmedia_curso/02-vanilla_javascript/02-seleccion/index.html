@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selección</title>
+  </head>
+  <body>
+    <h1 id="principal">Heading 1</h1>
+    <h2 class="heading">Heading 2</h2>
+
+    <ul>
+      <li>Uno</li>
+      <li>Dos</li>
+      <li>Tres</li>
+      <li>Cuatro</li>
+      <li>Cinco</li>
+    </ul>
+
+    <script>
+      // buscar elementos en base a un selector
+      var elementos = document.querySelectorAll("li");
+      // console.log(elementos);
+
+      elementos[0].addEventListener("click", function () {
+        console.log("Click");
+      });
+
+      // buscar elementos con una cvlase específica
+      var heading = document.getElementsByClassName('heading');
+      // console.log(heading);
+
+      // buscar elementos por nombre de tag
+      var ul = document.getElementsByTagName('ul');
+      // console.log(ul);
+
+      // buscar elementos por id
+      var principal = document.getElementById('principal');
+      // console.log(principal);
+    </script>
+  </body>
+</html>

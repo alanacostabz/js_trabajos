@@ -1,0 +1,77 @@
+NODE JS
+
+  - NODE FUNDAMENTALS
+  - EXPRESS.JS
+  - MONGODB, MONGOOSE
+  - APPLICATIONS
+  - DEPLOYMENT
+
+WHAT IS NODE JS?
+  - Enviroment to run JS outside browser
+  - Built on chrome's V8 JS engine
+  - Big community
+  - Full-Stack
+
+BUILT-IN MODULES
+  - OS
+  - PATH
+  - FS
+  - HTTP
+
+
+CONCEPTS
+  - REPL: js Read-Eval-Print-Loop (REPL) is an interactive shell that processes Node. js expressions. The shell reads JavaScript code the user enters, evaluates the result of interpreting the line of code, prints the result to the user, and loops until the user signals to quit.
+  
+  - CLI: Command-line interfaces (CLIs) built in Node. js allow you to automate repetitive tasks while leveraging the vast Node. js ecosystem. And thanks to package managers like npm and yarn , these can be easily distributed and consumed across multiple platforms.
+
+  - EVENT LOOP: allows node.js to perform non-blocking I/O operations - https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
+  - SLIDES: https://course-api.com/ https://blog.nearsoftjobs.com/entendiendo-la-magia-detr%C3%A1s-de-nodejs-y-su-event-loop-8335e3b35e58
+
+  - STREAMS: are use to read or write secuencially
+    - Writeable
+    - Readable
+    - Duplex
+    - Transform
+
+  PIPE
+    - https://apuntes.de/nodejs/pipes/#gsc.tab=0
+
+  RESOURCES
+    - HTTP response status codes: https://developer.mozilla.org/es/docs/Web/HTTP/Status
+
+  EXPRESS JS
+    - I'ts a minimum and flexible node js web app framework, design to make developing websites and apis much faster and easier
+    - https://expressjs.com/es/
+
+  API VS SSR
+
+    - API                SSR
+      - JSON              - TEMPLATE
+      - SEND DATA         - SEND TEMPLATE
+      - RES.JSON()        - RES.RENDER()
+
+  PARAMS
+    - params property is an object containing properties mapped to the named route “parameters”. For example, if you have the route /student/:id, then the “id” property is available as req.params.id.
+
+  URL PARAMS
+    - Essentially, that is a way for us to send small amount of information to the server using the URL
+    - This information normally is used like params, for exmaple to consult db, data results
+
+  EXPRESS MIDDLEWARE
+    - https://expressjs.com/es/guide/using-middleware.html
+    - Express middlewares are functions that execute during the request to the server server
+    - What is app use () in Express?
+The app. use() function is used to mount the specified middleware function(s) at the path which is being specified. It is mostly used to set up middleware for your application. Syntax: app.use(path, callback)
+    -https://www.geeksforgeeks.org/express-js-app-use-function/
+    - allow us to structure our applications as level block
+
+
+  HTTP METHODS
+    - GET read data -> www.store.com/api/orders -> get all orders -> www.store.com/api/orders:id -> get single order (path params)
+    - POST insert data -> www.store.com/api/orders -> place an order (send data)
+    - PUT update data -> www.store.com/api/orders/:id -> update specific order (params + send data)
+    - DELETE delete data -> www.store.com/api/orders/:id -> www.store.com/api/orders/:id delete order (path params)
+
+  EXPRESS ROUTER
+    - https://expressjs.com/es/guide/routing.html
+    - Router para crear manejadores de rutas montables y modulares. Una instancia Router es un sistema de middleware y direccionamiento completo; por este motivo, a menudo se conoce como una “miniaplicación”.

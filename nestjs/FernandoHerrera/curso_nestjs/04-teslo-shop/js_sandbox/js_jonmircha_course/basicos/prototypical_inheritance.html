@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentos JavaScript</title>
+</head>
+
+<body>
+  <h1>Fundamentos JavaScript</h1>
+
+  <script>
+    // HERENCIA PROTOTÍPICA
+
+    /*
+      HERENCIA: capacidad de poder heredar carácteristicas de un padre a un hijo
+    */
+    function Persona(nombre, equipo) {
+      // Átributos
+      this.nombre = nombre;
+      this.equipo = equipo;
+    }
+
+    // Métodos
+    Persona.prototype.celebración = function () {
+      console.log("GOOOOOOOOL");
+    }
+
+    Persona.prototype.saludar = function () {
+      console.log(`Hola mi nombre es ${this.nombre}`);
+    }
+
+    function Jugador(nombre, equipo, posicion) {
+      this.super = Persona;
+      this.super(nombre, equipo);
+      this.posicion = posicion;
+    }
+
+    // Jugador está heredando de Persona
+    Jugador.prototype = new Persona();
+    Jugador.prototype.constructor = Persona;
+
+    // Sobreescritura de métodos del prototipo padre en el hijo
+    Jugador.prototype.celebración = function () {
+      console.log('SIUUUUU');
+    }
+
+    Jugador.prototype.hablar = function () {
+      console.log("Hola");
+    }
+
+    const messi = new Jugador("Messi", "Barcelona", 'Delantero'),
+      ronaldo = new Persona("Ronaldo", "Real Madrid");
+
+    console.log(messi);
+    console.log(ronaldo);
+
+    messi.saludar();
+    messi.celebración();
+    messi.hablar();
+
+    ronaldo.saludar();
+    ronaldo.celebración();
+
+  </script>
+</body>
+
+</html>

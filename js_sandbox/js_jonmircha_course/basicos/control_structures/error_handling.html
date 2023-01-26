@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentos JavaScript</title>
+</head>
+
+<body>
+  <h1>Fundamentos JavaScript</h1>
+
+  <script>
+    // MANEJO DE ERRORES
+
+    /*
+      
+    */
+    try {
+      console.log("En el TRY se agrega el código a evaluar");
+      noExiste;
+      console.log("Segundo mensaje en el TRY");
+    } catch (error) {
+      console.log("CATCH captura cualquier error surgido o lanzado en el TRY");
+      console.log(error);
+    } finally {
+      console.log("El bloque FINALLY se ejecutarpa siempre al final de un bloque TRY-CATCH");
+    }
+
+
+    // Mensajes personalizados de error
+    try {
+      let numero = s;
+      if (isNaN(numero)) {
+        throw new Error("El caractér introducido no es un número");
+      }
+      console.log(numero * numero);
+    } catch (error) {
+      console.log(`Se produjo el siguiente error: ${error}`);
+    }
+
+    // throw es como un return que envía el flujo de la programación al catch
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentos JavaScript</title>
+</head>
+
+<body>
+  <h1>Fundamentos JavaScript</h1>
+
+  <script>
+    // Una ESTRUCTURA DE CONTROL es aquel mecanismo que permite controlar el flujo de la progrmación
+
+    /*
+      ESTRUCTURAS SECUENCIALES: son las que van una detrás de la otra
+      ESTRUCTURAS CONDICIONALES: dependiendo de la evaluación de una condición, hacemos ciertas acciones u otras
+    */
+
+    // if-else
+    let edad = 16;
+    if (edad > 17) {
+      console.log('Eres mayor de edad');
+    } else {
+      console.log('Eres menor de edad');
+    }
+
+    if (edad >= 18) {
+      console.log('Eres mayor de edad');
+    } else {
+      console.log('Eres menor de edad');
+    }
+
+    // if - else if - else
+    /*
+      Déjame dormir: 0hrs - 5hrs
+      Buenos días: 6hrs - 11hrs
+      Buenas tardes: 12hrs - 18hrs
+      Buenas Noches: 19hrs - 23hrs
+    */
+    let hora = 5;
+
+    if (hora >= 0 && hora <= 5) {
+      console.log('Dejame dormir')
+    } else if (hora >= 6 && hora <= 11) {
+      console.log('Buenos días')
+    } else if (hora >= 12 && hora <= 18) {
+      console.log('Buenas tardes');
+    } else {
+      console.log('Buenas noches')
+    }
+
+    // OPERADOR TERNARIO: es una simplificación de un if-else y consta de (condición) ? verdadero : false;
+    console.log('OPERADOR TERNARIO:');
+    let eresMayor = edad >= 18
+      ? "Eres mayor de edad"
+      : "Eres menor de edad";
+    console.log(eresMayor);
+
+    // switch - case (se utiliza cuando tenemos diferentes valores para una misma variable)
+    /*
+      Domingo - 0
+      Lunes - 1
+      Martes - 2
+      Miércoles - 3
+      Jueves - 4
+      Viernes - 5
+      Sábdo - 6
+    */
+    let dia = 2;
+
+    switch (dia) {
+      case 0:
+        console.log('Domingo');
+        break;
+      case 1:
+        console.log('Lunes');
+        break;
+      case 2:
+        console.log('Martes');
+        break;
+      case 3:
+        console.log('Miércoles');
+        break;
+      case 4:
+        console.log('Jueves');
+        break;
+      case 5:
+        console.log('Viernes');
+        break;
+      case 6:
+        console.log('Sábado');
+        break;
+
+      default:
+        console.log('El día no existe');
+        break;
+    }
+
+
+  </script>
+</body>
+
+</html>

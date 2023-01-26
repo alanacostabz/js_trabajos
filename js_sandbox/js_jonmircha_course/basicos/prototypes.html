@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentos JavaScript</title>
+</head>
+
+<body>
+  <h1>Fundamentos JavaScript</h1>
+
+  <script>
+    // PROTOTIPOS: es un mecanismo por el cual un objeto puede dar atributos y métodos, es un mecanismo por el cual un objeto va poder heredar de un objeto padre atributos y métodos es decir funciones
+
+    /*
+      JS es un lenguaje multi paradigma (programación funcional, POO)
+      JS es un lenguaje basado en objetos pero orientado a prototipos no en clases
+
+      - POO (Progrmación Orientada a Objetos):
+        Hay cuatro conceptos muy importantes que debemos de entender
+          1. Clases - Una clase es un modelo a seguir
+          2. Objetos - Un objeto es una instancia de una clase
+            2.1 Atributos -  Es una característica o propiedad del objeto (son variables dentro de un objeto)
+            2.2 Métodos - Son las acciones que un objeto puede realizar (son funciones dentro de un objeto)
+    */
+
+    // const animal = {
+    //   nombre: "Mufasa",
+    //   sonar() {
+    //     console.log("GRRRRRRR");
+    //   }
+    // }
+    // const animal2 = {
+    //   nombre: "Simba",
+    //   sonar() {
+    //     console.log("GRRRRRRR");
+    //   }
+    // }
+    // console.log(animal);
+
+    // Función constructora
+    // function Jugador(nombre, equipo) {
+    //   // Átributos
+    //   this.nombre = nombre;
+    //   this.equipo = equipo;
+
+    //   // Métodos
+    //   this.celebración = function () {
+    //     console.log("GOOOOOOOOL");
+    //   }
+
+    //   this.saludar = function () {
+    //     console.log(`Hola mi nombre es ${this.nombre} y juego para el ${this.equipo}`);
+    //   }
+    // }
+
+    // Función contructora donde asignamos los métodos al prototipo no a la función como tal
+    function Jugador(nombre, equipo) {
+      // Átributos
+      this.nombre = nombre;
+      this.equipo = equipo;
+    }
+
+    // Métodos
+    Jugador.prototype.celebración = function () {
+      console.log("GOOOOOOOOL");
+    }
+
+    Jugador.prototype.saludar = function () {
+      console.log(`Hola mi nombre es ${this.nombre} y juego para el ${this.equipo}`);
+    }
+
+
+    const messi = new Jugador("Messi", "Barcelona"),
+      ronaldo = new Jugador("Ronaldo", "Real Madrid");
+
+    console.log(messi);
+    console.log(ronaldo);
+
+    messi.saludar();
+    messi.celebración();
+
+    ronaldo.saludar();
+    ronaldo.celebración();
+
+
+  </script>
+</body>
+
+</html>

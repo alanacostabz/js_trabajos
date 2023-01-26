@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevos Tipos de Datos en JavaScript</title>
+</head>
+
+<body>
+  <h1>Nuevos Tipos de Datos en JavaScript</h1>
+
+  <script>
+    /*
+      CUSTOM PROPERTIES: propiedades dinámicas de los objetos
+    */
+
+    let aleatorio = Math.round(Math.random() * 100 + 5);
+
+    const objUsuarios = {
+      [`id_${aleatorio}`]: "Valor Aleatorio"
+    }
+    const usuarios = ["messi", "dybala", "ronaldo", "neymar", "mbappé"];
+
+    console.log(usuarios);
+
+    usuarios.forEach((usuarios, index) => objUsuarios[`id_${index}`] = usuarios);
+
+    console.log(objUsuarios);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+PROGRAMACIÓN ORIENTADA A OBJETOS
+
+- Es un paraigma una forma de programar
+- ve todo como un objeto estos tienen datos (atributos) y funcionalidad (método)
+
+ABSTRACCIÓN: es pensar que atributos y que métodos deberia tener un objeto
+CLASE: es una plantilla que tiene una estructura del objeto 
+INSTANCIAR: es crear un objeto a partir de una clase
+
+SE BASA EN 4 PILARES
+  - ABSTRACCIÓN:  es pensar que atributos y que métodos deberia tener un objeto
+  - ENCAPSULAMIENTO: proteger los atributos y metodos
+  - POLIMORFISMO: poder dar una misma orden a diferentes objetos y obtener una respuesta propia
+  - HERENCIA: cuando un objeto hereda atributos o funciones a otro

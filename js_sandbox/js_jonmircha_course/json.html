@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON: JavaScript Object Notation</title>
+</head>
+
+<body>
+  <h1>JSON: JavaScript Object Notation</h1>
+
+  <script>
+    /*
+      JSON:
+        - Es una herramienta muy importante dentro de JS, sus siglas en español significan notación de objetos JS.
+
+        - Es un formato ligero de intercambio de datos.
+
+        - Es una interfaz de lenguaje que provee funciones para convertir valores JS a una notación JSON y tiene 2 métodos "parse" y "stringify"
+          - PARSE: lo que hace es analizar una notación json y la convierte a un tipo de dato que JS válide (objeto, arreglo, boolean, etc).
+          - STRINGIFY: hace lo contrario, convierte un objeto o valor de JS en cadena de texto JSON.
+
+        NOTA:
+          - Antes de JSON se usaba XML que es un lenguaje de marcado de texto muy parecido a HTML que antes se usaba para este tipo de intercambios, pero con la adopción de JSON se ha ido desplazando poco a poco XML.
+
+          - JSON  se ha vuelto un estándar en el intercambio de información.
+
+          - Todo archivo de JSON tiene que empezar con apertura de llaves y cierres, mantiene ciertas reglas como el que todas las propiedades tienen que estar entre comillas doble solamente.
+    */
+
+    const json = {
+      cadena: "Jon",
+      numero: 35,
+      booleano: true,
+      arreglo: ["correr", "programar", "cocinar"],
+      objeto: {
+        twitter: "@jonmircha",
+        email: "jonmircha@gmail.com"
+      },
+      nulo: null
+    }
+
+    console.log(json);
+
+    console.log(JSON);
+    console.log(JSON.parse("{}"));
+    console.log(JSON.parse("[1,2,3]"));
+    console.log(JSON.parse("true"));
+    console.log(JSON.parse("false"));
+    console.log(JSON.parse("18"));
+    console.log(JSON.parse("null"));
+    // console.log(JSON.parse("undefined"));
+    // console.log(JSON.parse('"Hola Mundo"'));
+    // console.log(JSON.parse("Hola Mundo"));
+
+    console.log(JSON.stringify({}));
+    console.log(JSON.stringify([1, 2, 3]));
+    console.log(JSON.stringify(true));
+    console.log(JSON.stringify(false));
+    console.log(JSON.stringify(18));
+    console.log(JSON.stringify(null));
+    console.log(JSON.stringify(undefined));
+    console.log(JSON.stringify({ x: 2, y: 3 }));
+    // console.log(JSON.stringify(undefined));
+    // console.log(JSON.stringify('Hola Mundo'));
+    // console.log(JSON.stringify(Hola Mundo));
+
+    console.log(JSON.stringify(json));
+    console.log(JSON.parse('{"cadena": "Jon", "numero": 35, "booleano": true, "arreglo": ["correr", "programar", "cocinar"], "objeto": { "twitter": "@jonmircha", "email": "jonmircha@gmail.com"}, "nulo": null}'));
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARRAYS SOME</title>
+</head>
+
+<body>
+
+  <script>
+    // Método SOME: permite dentro de los arrays de JS me permite ver si uno de los elementos cumple con la condición que le estoy especificando
+
+    const array = [1, 2, 3, -10, 5, 6];
+
+    const isLessThanZero = value => value < 0;
+
+    const hayAlgunValorMenorAcero = array.some(isLessThanZero);
+
+    console.log(hayAlgunValorMenorAcero); // true
+
+    // Ejemplo más realista
+    const users = [
+      { name: "Ronaldo", age: 36 },
+      { name: "Messi", age: 34 },
+      { name: "Vinicius", age: 21 },
+      { name: "Mbappé", age: 22 },
+    ];
+
+    const anyAdult = users.some(user => user.age > 18);
+    console.log(anyAdult); // true
+  </script>
+</body>
+
+</html>

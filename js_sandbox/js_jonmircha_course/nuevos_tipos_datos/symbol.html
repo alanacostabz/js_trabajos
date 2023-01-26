@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevo Tipos de Datos en JavaScript</title>
+</head>
+
+<body>
+  <h1>Nuevos Tipos de Datos en JavaScript</h1>
+
+  <script>
+    /*
+      SYMBOL: es un tipo de dato primitivo que fue introducido en ES6 en 2015, nos permite crear identificadores de referencia (únicos), suelen usarse a menudo para identificar las propiedades de objeto, para evitar colisiones entre propiedades que pudieramos sobreescribir, se puede usar para ocutltar ciertas propiedades
+
+      La mayoria de los usos de este tipo de dato es crear elementos privados dentro de un objeto y que tambien sus referencias van a ser únicas
+    */
+
+    let id = Symbol("id");
+    let id2 = Symbol("id2");
+
+    console.log(id === id2);
+    console.log(id, id2);
+    console.log(typeof id, typeof id2);
+
+    const NOMBRE = Symbol("nombre");
+    const SALUDAR = Symbol("saludar");
+
+    const persona = {
+      [NOMBRE]: "Alan",
+      edad: 26
+    };
+
+    console.log(persona);
+
+    persona.NOMBRE = "BRYAN";
+    console.log(persona);
+    console.log(persona.NOMBRE); // llamando propiedad
+    console.log(persona[NOMBRE]); // llamando symbol
+
+    persona[SALUDAR] = function () {
+      console.log("Hola");
+    }
+
+    console.log(persona);
+
+    // invocar symbol function
+    persona[SALUDAR]();
+
+    for (const propiedad in persona) {
+      console.log(propiedad);
+      console.log(persona[propiedad]);
+    }
+
+    console.log(Object.getOwnPropertySymbols(persona));
+  </script>
+</body>
+
+</html>

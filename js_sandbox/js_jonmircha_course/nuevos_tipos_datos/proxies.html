@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevos Tipos de Datos en JavaScript</title>
+</head>
+
+<body>
+  <h1>Nuevos Tipos de Datos en JavaScript</h1>
+
+  <script>
+    /*
+      Proxie: es un nuevo mecanismo en JS que me permite crear un objeto basado en un objeto literal inicial. El proxie hace una vinculación entre el objeto original, el objeto copia y a traves de su objeto especial manejador podemos hacer validaciones antes de hacer la asignación
+    */
+
+    const persona = {
+      nombre: "",
+      apellido: "",
+      edad: 0,
+    }
+
+    const manejador = {
+      set(obj, prop, valor) {
+        if (Object.keys(obj).indexOf(prop) === -1) {
+          return console.error(`La propiedad "${prop}" no existe en el objeto persona`);
+        }
+
+        if ((prop === "nombre" || prop === "apellido") && !(/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/g.test(valor))) {
+          return console.error(`La propiedad "${prop}" sólo acepta letras y espacios en blanco`);
+        }
+
+        obj[prop] = valor;
+      }
+    };
+
+    const jon = new Proxy(persona, manejador);
+    jon.nombre = "jon";
+    jon.apellido = "mircha";
+    jon.edad = 35;
+    jon.twitter = "@jonmircha";
+    console.log(jon);
+
+    // si se agrega una propiedad el proxie se lo asigna al objeto original al menos que se valide que no sea así
+    console.log(persona);
+
+    /**
+     * Los patrones de diseño son técnicas que nos ayudan a resolver problemas en especifico, estos pueden ser estructurales, comportamiento o creacionales. En este caso proxie es un patrón de diseño estructural, es decir nos va ayudar con la estructura del diseño de nuestro programa. Proxie es una especie de intermediario.
+     * */
+
+    (function () {
+      let names = ["Alan", "Fernanda", "Citlally"];
+
+      let proxy = new Proxy(names, {
+        get: function (target, property) {
+          return property === 'length' ? target.length : target[property].toUpperCase();
+        },
+        set: (target, property, value) => {
+          if (typeof (value) === 'string') {
+            target[property] = value;
+          }
+        }
+      });
+
+      proxy[3] = "Camila";
+      for (let i = 0; i < proxy.length; i++) {
+        console.log(proxy[i])
+      }
+
+      console.log(proxy[0]);
+
+      // let proxyT =
+      //   new Proxy(document.getElementById("txt"), {
+      //     get: (target, property) => {
+      //       if (property === "content") {
+      //         return target[property];
+      //       }
+      //     },
+      //     set: (target, property, value) => {
+      //       if (property === "value") {
+      //         target[property] = value.toUpperCase();
+      //       }
+      //     }
+      //   });
+      // console.log(proxyT.content)
+      // proxyT.value = "aggh";
+    })();
+
+
+  </script>
+</body>
+
+</html>

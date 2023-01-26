@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevos Tipos de Datos en JavaScript</title>
+</head>
+
+<body>
+  <h1>Nuevos Tipos de Datos en JavaScript</h1>
+
+  <script>
+    /*
+      Cuando hablamos que una variable es iterable, o un tipo de dato es iterable, significa que es una estructura de datos lineal que hace que sus elementos sean públicos y se puedan recorrer (arreglos, string, maps, sets e incluso elementos del DOM)
+
+      ITERABLE: es el elemento el cual su contenido se puede recorrer
+      ITERADOR: es el mecanismo que está recorriendo los elementos
+
+      Iterador: es una interface, método especial al cual podemos acceder todo tipo de dato que sea iterable
+    */
+
+    // const iterable = new Set([1, 2, 3, 3, 4, 4, 5]);
+    // const iterable = "Hola Mundo";
+    // const iterable = new Map(["nombre", "alan"], ["apellido", "acosta"])
+    const iterable = [1, 2, 3, 4, 5];
+
+    // accedemos al iterador del iterable
+    const iterador = iterable[Symbol.iterator]();
+
+    console.log(iterable);
+    console.log(iterador);
+    // console.log(iterador.next());
+    // console.log(iterador.next());
+    // console.log(iterador.next());
+    // console.log(iterador.next());
+    // console.log(iterador.next());
+    // console.log(iterador.next());
+    let next = iterador.next();
+
+    while (!next.done) {
+      console.log(next.value);
+      next = iterador.next();
+    }
+  </script>
+</body>
+
+</html>

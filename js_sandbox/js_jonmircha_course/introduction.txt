@@ -1,0 +1,188 @@
+INTRODUCCIÓN AL LENGUAJE DE PROGRAMACIÓN JAVASCRIPT
+
+- Fue creado por Brendan Eich en 1995.
+- Página para complementar el curso: https://aprendejavascript.org/
+
+CARACTERÍSTICAS Y GRAMÁTICA DE JAVASCRIPT
+- ISOMORFISMO: Hoy JS, es el único lenguaje capaz de ejecutarse en las 3 capas de aplicación:
+    1. Frontend (JS)
+    2. Backend (Node.js)
+    3. Persistencia de Datos (MongoDB, Couch DB, Firebase, etc).
+
+  Con JS podemos:
+    - Diseño y desarrollo web
+    - Hacer videojuegos
+    - Experiencias 3D, Realidad Aumentada, Realidad Virtual
+    - Controlar Hardware (Drones, robots, electrodomésticos)
+    - Aplicaciones Híbridas y Móviles
+    - Marchine Learning
+    - etc
+
+  Características
+    - Lenguaje de Alto Nivel
+    - Interpretado
+    - Dinámico
+    - Débilmente Tipado
+    - Multi paradigma
+    - Sensible a MAYÚSCULAS y minúsculas
+    - No necesitas los puntos y comas al final de cada linea
+
+  Escritura de código
+    Los identificadores (es un nombre que le damos a una clase, una función, etc) deben comenzar con:
+      - Una letra o
+      - Un signo de dolar $ o
+      - Un guión bajo _
+      - Nunca números y caracteres especiales
+
+    Usa snake_case en:
+      - Archivos: mi_archivo_javascript.js
+
+    Usa UPPER_CASE en:
+      - Constantes: const UNA_CONSTANTE = "Soy una constante", PI = 3.1416;
+
+    Usa UpperCamelCase en:
+      - Clases: class SerHumano {}
+
+    Usa lowerCamelCase en:
+      - Objetos: const unObjeto = {};
+      - Pirimitivos: let unaCadena = 'Hola Mundo';
+      - Funciones: function holaMundo (nombre) {};
+      - Instancias: const ajax = new XMLHttpRequest();
+
+    Plabras reservadas: son palabras que no se pueden usar ya que tienen ciertas funcionalidades como boolean, break, etc.
+
+    addListener: es un listener para las media queries
+
+    interceptionObserver: es una nuevs API que lo que hace es detectar cuando se encuentra un elemento en parte visible de nuestro navegador
+
+    nooppener - noreferrer: 
+      - https://www.kinaweb.es/que-son-rel-noopener-y-rel-noreferrer-en-wordpress/#%C2%BFRel_=_%E2%80%9Dnoopener%E2%80%9D_afecta_su_SEO
+      - https://clever-solution.com/everything-you-need-to-know-about-rel-noopener-noreferrer-tags-purpose-benefits-and-seo-impact/
+
+  
+  Ordenamiento de código
+    1. IMPORTACIÓN DE MÓDULOS
+    2. DECLARACIÓN DE VARIABLES
+    3. DECLARACIÓN DE FUNCIONES
+    4. EJECUCIÓN DE CÓDIGO
+
+  Tipos de datos en JS
+    1. Primitivos: se accede directamente al valor.
+      - string
+      - number
+      - boolean
+      - null
+      - undefined
+      - NaN
+    
+    2. Compuestos: se accede a la referencia del valor.
+      - object = {}
+      - array = []
+      - function () {}
+      - Class {}
+      - etc
+
+
+CONCEPTOS
+  LocalStorage: Es una API que nos permite almacenar una variable en el disco duro del usuario (el navegador lo guarda en una sección)
+
+  UserAgent: es una cadena de texto que contiene información que nos permite saber información del dispositivo en el que está siendo llamado
+  
+  Navigator: representa el estado y la identidad del user agent. Es completamente consultable y es posible registrar scripts para que ejecuten diversas actividades. Contiene información acerca del navegador.
+
+  ServiceWorkers: me permite simular la conexión de internet
+
+  API: application programing interface, no es más que un conjunto de rutinas que nos provee acceso a ciertas funcionalidades de un software en especifico, dentro del mundo de las api's tenemos:
+    
+    - Nativas: es por ejemplo todo lo que javascript de cada navegador trae integrado para acceder a dom a la camara web, batería, puertos usb, estados de conección geolocalización, etc.
+
+    - Externas: como por ejemplo acceder a cierta información desde una URL (endpoints), por ejemplo el api de facebook para ver los usuarios.
+
+  API REST: Representational State Transfer, es un conjunto de restricciones con las que podemos crear un estilo de arquitectura de software, se basa en las reglas y protoclos HTTP, tambien conocido como RestFul
+    Carácteristicas:
+      - Relación cliente-servidor: el cliente y el sevidor estan separados (estan debilmente acoplados)
+      - Sin estado: cada petición recibida se va a manejar de manera independiente, lo que evitar que se mantegan sesiones conectadas, como para hacer varias peticiones al mismo tiempo
+      - Debe de ser cacheable: debe de haber un sistema de almacenamiento en caché para evitar repetitivas conecciones hacia un mismo recurso del servidor y esto impacta en el rendimiento de las aplicaciones.
+      - Mantener una interfaz uniforme: es decir una interfaz genérica que permita la adminsitración entre la interacción entre el cliente y el servidor de una manera uniforme, es decir que para cada petición va a existir una url única (endpoints = puntos finales a los cuales voy a acceder a cierto recurso)
+      - Debe tener un sistema de capas: significa que del lado del servidor debe de haber varias capas a la hora de implementarla para estar previstos hacia más adelante ese desarrollo escala, capas para monitorizar el rendimiento y la seguridad
+  https://jonmircha.com/api-rest
+
+  MIME-TYPES: los mime-types son los tipos de contenidos que se envían dentro de la cabecera cuando hacemos una petición hacia la web, cada tipo de archivo diferente tiene una mime, por default es texto plano. https://developer.mozilla.org/es/docs/Web/HTTP/Basics_of_HTTP/MIME_types
+
+  CORS: (Cross Origin Resource Sharing - Intercambio de recursos de origen cruzado)
+    - Es una política de nomas que nos dice que todas las peticiones AJAX en "teoría" tendrían que estar en el mismo servidor
+    - una opción de evitar manejar esto es habilitar el modo no-cors para hacer la petición
+    - otra opción es que la API que se está consultando permita que el recurso pueda ser accesido mediante cualquier origen
+
+  STRIPE: https://stripe.com/mx - plataforma de pagos en línea,
+    https://stripe.com/docs 
+    https://stripe.com/docs/api
+    https://stripe.com/docs/api/authentication?lang=curl
+    https://stripe.com/docs
+    https://stripe.com/docs/js
+    https://stripe.com/docs/api/products
+    https://stripe.com/docs/api/prices
+    https://stripe.com/docs/api/checkout/sessions
+    https://github.com/stripe-samples
+    https://github.com/stripe-samples/checkout-single-subscription
+
+  PromiseAll: sirve cuando necesitamos solicitar la información de varios endpoints, en lugar de esperar a cada endpoints, se programa una sola invocación y al final genera un solo objeto
+
+
+  MARRKDOWN: 
+    https://joedicastro.com/pages/markdown.html
+    Markdown es un lenguaje de marcado ligero parecido al que se emplea en muchas wikis y basado originalmente en convenciones existentes en el marcado de los correos electronicos. Emplea texto plano, procurando que sea legible pero consiguiendo que se convierta en XHTML correctamente formateado.
+
+  SHOWDOWN: es una librería externa que lee el código entregado en texto plano en formato markdown y lo que hace es que lo convierte a código HTML - http://showdownjs.com/ - https://css-tricks.com/choosing-right-markdown-parser/
+
+  SPA - SINGLE PAGE APPLICATION
+    Es una aplicacion de una sola página, esto quiere decir que todos los recursos y dependencias de nuestra aplicación van a cargar a la hora que nosotros solicitemos al servidor ese archivo (p.e. un index.html), carga todo el contenido de una sola vez.
+
+  REACTIVIDAD
+    Reactividad de los datos
+      - La vemos cuando un sitio o aplicación modifica los cambios que nosotros vemos en la UI, se modifican a partir de los cambios que tengan
+      los datos de la lógica de programación de dicho sitio o aplicación, eso significa que cada que se actualizan los datos la interfaz de usuario puede cambiar o nos va a mostrar nuevo contenido.
+
+      - Estado: es una forma elegante de decirle a los datos de la aplicación, se le llama así por que estamos hablando de un proceso reactivo, tiene una duración de tiempo determinada. Son los datos en un momento en particular de flujo de nuestro sitio o aplicación. En resumen el estado no es mas que que los datos que controlan nuestra lógica de programación en un momento dado.
+
+      - Interfaces basadas en el estado: son aquellas que en base a los cambios que sufren los datos de la aplicación en cierto momento, esta se va a renderizar. Se dividen en pequeños elementos llamados componentes.
+
+      - Componentes: un componente es un patrón visual repetido que se puede resumir en un fragmento de codigo independiente html, css y posiblemente tenga javascript.
+
+      - Caracteristicas que deben cumplir las interfaces de usuario para considerarse componentes:
+        1. Son un fragmento de la interfaz que cumplen una función única, por ejemplo un botón, tarjeta, etc.
+        2. Son reutilizables.
+        3. Son independientes tanto de su contexto como el resto de componentes
+        4. Son autocontenidos, es decir no filtran estilos, no filtran funcionalidad a otros componentes.
+
+      - Una aplicación reactiva basada en componentes nos va a permitir separar el código en elementos de interfaces (pequeñas piezas de código independientes)  y que aparte vamos a poder reutilizar, estas pueden estar aisladas, e interactuar entre sí pero sin manejar cierta coodepedencia.
+      
+  SPREAD OPERATOR
+    - El Spread Operator corresponde a un operador el cuál distribuye los elementos de un arreglo u objeto, para asignarlos a alguna variable/constante/función.
+
+  DESTRUCTURACION
+    - La sintaxis de desestructuración es una expresión de JavaScript que permite desempacar valores de arreglos o propiedades de objetos en distintas variables.
+
+
+  IMPORTANTE:
+    - Windows: es el contexto global que controla la ventana de nuestro navegador
+    - Document: es el árbol, la estructura HTML que nos permite acceder a los nodos de nuestor documento
+    - Navigator: nos dá información de las caráctersiticas del dispositivo o del usuario que está accediendo a nuestra aplicación
+
+Enlaces:
+  - https://web.archive.org/
+  -  link de los loaders en SVG: https://samherbert.net/svg-loaders/
+  - https://formsubmit.co/ es una api que me permite tener formularios estáticos de HTML y me permite enviar a mi correo electrónico la información
+  - https://jsonplaceholder.typicode.com/ es una API REST falsa online para hacer pruebas y prototipos
+  - AXIOS: https://github.com/axios/axios es una API que trabaja basadas en promesas
+  - JSON-SERVER: https://www.npmjs.com/package/json-server para crear apis falsas y prácticar
+  - https://pokeapi.co/ - api de pokemones
+
+  LIBTOS JS:
+    - Building Frontend Web Apps with Plain Javascript: https://web-engineering.info/JsFrontendApp-Book
+    - Javascript for impatient programmers: https://exploringjs.com/impatient-js/toc.html
+    - Eloquent Javascript: https://eloquentjavascript.net/
+    - Human Javascript: https://read.humanjavascript.com/
+    - Learning JavaScript Design Patterns: https://addyosmani.com/resources/essentialjsdesignpatterns/book/
+    - Javascript Info: https://javascript.info/
+    -  You Don't Know JS: https://github.com/getify/You-Dont-Know-JS/tree/2nd-ed | https://github.com/You-Dont-Know-JS-ES/Traduccion

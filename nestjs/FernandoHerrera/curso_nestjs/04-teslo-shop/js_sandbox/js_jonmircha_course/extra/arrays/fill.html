@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARRAYS FILL</title>
+</head>
+
+<body>
+
+  <script>
+    // ARRAY.FILL: es una función que nos permite llenar una array con cualquier cosa que se necesite
+    const array = [1, 1, 1, 1, 1, 1, 1, 1];
+
+    // array.fill(10); // [10, 10, 10, 10, 10, 10, 10, 10]
+    // array.fill(11, 2); // 10, 10, 11, 11, 11, 11, 11, 11] valor - start
+    array.fill(11, 2, 5); // [1, 1, 11, 11, 11, 1, 1, 1] valor - start - end
+
+    console.log(array); // [1, 1, 1, 1, 1, 1, 1, 1]
+
+    // Se puede ultizar para inicializar arrays de un rango en especifico de elementos
+    const myArray = new Array(20).fill(0); // tamaño de para 20 items/valores
+
+    console.log(myArray); //
+  </script>
+</body>
+
+</html>

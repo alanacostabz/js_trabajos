@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARRAYS REDUCE</title>
+</head>
+
+<body>
+
+  <script>
+    // REDUCER: es un método que tienen los arreglos en javascript y que nos permiten ejecutar funciones reducer
+    // una funcion de reducer recibe 2 argumentos el primero es el valor que está siendo acumulado y el segundo es el elemento que se está iterando del arreglo
+    // Esta función tiene que devolver el nuevo elemento que se va a estar acumulando
+    // No solo permite hacer reducciones de elementos, si no que tambien permite  bastante más operaciones bastante útiles en el mundo real
+
+    // función reducer
+    // const reducer = (acumulador, valorActual) => nuevoAcumulador;
+
+    // const reducido = [1, 2].reduce((acc, el) => acc + el, 0);
+    // console.log(reducido);
+
+    const numeros = [1, 2, 3, 4, 5];
+    const resultado = numeros.reduce((acc, el) => acc + el, 0); // sumar todos los elementos del arreglo
+    console.log(resultado);
+
+    const juegos = [
+      { nombre: "zelda botw", lanzamiento: 2017, plataforma: "nintendo", ventas: 1000 },
+      { nombre: "the last of us", lanzamiento: 2020, plataforma: "playstation", ventas: 900 },
+      { nombre: "back 4 blood", lanzamiento: 2021, plataforma: "playstation", ventas: 650 },
+      { nombre: "metroid dread", lanzamiento: 2021, plataforma: "nintendo", ventas: 200 },
+    ];
+
+    const indexed = juegos.reduce((acc, el) => ({
+      ...acc,
+      [el.nombre]: el
+    }), {});
+    console.log(indexed);
+    console.log(indexed["zelda botw"]);
+
+    const anidado = [1, [2, 3], 4, [5]]
+    // [1,2,3,4,5]
+    const plano = anidado.reduce((acc, el) => acc.concat(el), []);
+    console.log(plano);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asíncronia en JavaScript</title>
+</head>
+
+<body>
+  <h1>Asíncronia en JavaScript</h1>
+
+  <script>
+    /*
+      Para trabajar la sincronía JS tiene diferentes mecanismos asíncronos que son los que vamos a estar viendo en estas sesiones y el primero de ellos son las callback (llamada de vuelta en español).
+
+      CALLBACK: Es una función que se va a ejecutar despues de que otra lo haga.
+
+      Una callback (llamada de vuelta) es una función que se ejecutará después de que otra lo haga.
+
+      Es un mecanismo para asegurar que cierto código no se ejecute hasta que otro haya terminado.
+
+      Al ser JavaScript un lenguaje orientado a eventos, las callbacks son una buena técnica para controlar la asíncronía, sin embargo... Callback Hell 😈🤘.
+
+      Nota: el callback es el primer mecanismo que tenemos para controlar la sincronía
+    */
+
+    function cuadradoCallback(value, callback) {
+      setTimeout(() => {
+        callback(value, value * value);
+      }, 0 | Math.random() * 100);
+    }
+
+    cuadradoCallback(0, (value, result) => {
+      console.log("Inicia Callback");
+      console.log(`Callback: ${value}, ${result}`);
+      cuadradoCallback(1, (value, result) => {
+        console.log(`Callback: ${value}, ${result}`);
+      });
+      cuadradoCallback(2, (value, result) => {
+        console.log(`Callback: ${value}, ${result}`);
+      });
+      cuadradoCallback(3, (value, result) => {
+        console.log(`Callback: ${value}, ${result}`);
+        console.log("Fin Callback");
+        console.log("Callback Hell !!! 😈🤘.");
+        console.log("http://callbackhell.com");
+      });
+    });
+  </script>
+</body>
+
+</html>
