@@ -1,7 +1,0 @@
-HOW THE WEB WORKS:
-  https://academind.com/tutorials/how-the-web-works
-  https://www.youtube.com/watch?v=hJHvdBlSxug
-
-DYNAMIC WEBSITES VS STATIC PAGES VS SINGLE APPS (SPAs)
-  https://academind.com/tutorials/dynamic-vs-static-vs-spa
-  https://www.youtube.com/watch?v=Kg0Q_YaQ3Gk

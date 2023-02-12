@@ -1,6 +1,0 @@
-VARIABLES DE AMBIENTE
-  - Las variables de entorno son un conjunto de valores que contienen información útil del programa y de los sistemas que están utilizando los usuarios para su ejecución. Afectan a cualquier software y resultan especialmente útiles de cara al backend.
-  - Las variables de ambiente se ejecutan en el sistema por lo que toda nuestra aplicación va a tener acceso
-  -  env contiene las variables de entorno de usuario individuales que alteran temporalmente las variables que se han establecido en el archivo /etc/environment.
-  - https://www.youtube.com/watch?v=YdK6PTQXkdM&list=WL&index=5
-  - gitignore , es un archivo de texto que le dice a Git qué archivos o carpetas ignorar en un proyecto. 

@@ -637,6 +637,53 @@ CURSO NEST: DESARROLLO BACKEND ESCALABLE CON NODE - FERNANDO HERRERA UDEMY - 202
           las api, con esta solución de código abierto, los usuarios pueden crear y guardar solicitudes
           http/s simples y complejas, así como leer us respuestass
 
+        open api:
+          - es una interfaz de programación de aplicaciones disponible púlicamente que brinda a los desarrolladores
+          acceso programático a una aplicación de software o servicio web propietario, las api son un conjunto de 
+          requisitos que rigen cómo una aplicación puede comunicarse e interactuar con otra
+          - es una interfaz de programación de aplicaciones que se pone a disposición del público para los desarrolladores
+          de software, las api abiertas se publican en internet y se comparten libremente, lo que permite a un propietario
+          de un servicio accesible en red brindar un acceso universal a los consumidores
+
+        swagger:
+          - es un conjunto de herramientas de software de código abierto para diseñar, construir,
+            documentar y utilizar servicios web restful, fue desarrollador por smartbear software
+            e incluye documentación automatizada, generación de código, y generación de casos de prueba
+          - es un conjunto de reglas, especificaciones y herramientas de código abierto para desarrollar
+            y describir apu restful, el framework swagger permite a los desarrolladores crear
+            documentación de api interactiva, legilble por humanos y máquinas
+          - permite describir la estructura de nuestras api para que las máquinas puedan leeras
+          - la capacidad de las api para describir su propia estructura es la raiz de toda la genialidad
+            de swagger
+
+        - rest y restful:
+          - la transferencia de estado representacional o rest es un estilo de arquitectura de software
+          para sistemas hipermedia distribuidos como la world wide web, rest es cualquier interfaz entre
+          sistemas que use http para obtener datos o generar operaciones sobre esos datos en todos los
+          datos posibles como xml y json, es una interfaz para conectar varios sistemas basados en el 
+          protcolo http y nos sirve para obtener y generar datos y operaciones, devolviendo esos datos en
+          formatos muy especificos como json y xml
+
+          - restful api es una interfaz que utilizan dos sistemas informáticos para intercambiar
+          información de forma segura a través de internet, Es considerada una técnica de arquitectura de
+          software, es decir, un conjunto de principios y patrones de comunicación que ayudan a crear una
+          forma de pensar y construir las APIs. Este tipo de arquitectura se define por un conjunto de
+          restricciones entre los elementos, componentes, conectores y datos usados
+
+          - la diferencia entre rest y restful es que rest es el conjunto de restricciones y restful se
+          refiera a una api que se adhiere a esas restricciones, se pueden utilizar servicios web, 
+          aplicaciones y software, REST es una arquitectura para aplicaciones en redes (REpresentational
+          State Transfer). RESTful por otro lado, son programas (a modo de web service o API), basados en
+          REST. Muchas veces se usan ambos terminos como sinonimos.
+
+          - api:
+            - interfaz de programación de aplicaciones es un conjunto de subrutinas, funciones y 
+            procedimientos que ofrece cierta biblioteca para ser utilizada por otro software como una
+            capa de extracción
+            - son mecanismos que permiten a dos componetes de sofware comunicarse entre si mediante 
+            el conjunto de definiciones y protocolos
+
+
         env:
           - los archivos env contienen credenciales en formato clave-valor para los servicios utilizados
           por el programa que están creando
@@ -696,7 +743,21 @@ CURSO NEST: DESARROLLO BACKEND ESCALABLE CON NODE - FERNANDO HERRERA UDEMY - 202
           segura entre las partes como un objeto json, esta información se puede verificar y confiar
           probar por que está firmada digitalmente
           - es un string que está firmado el cual va a saber mi backend si está manipulado o no, ademas
-          de temer cierta información que nos ayudarpa a saber que usuario está intentando logearse
+          de tener cierta información que nos ayudarpa a saber que usuario está intentando logearse
+
+        - refresh tokens:
+          - un token de actualización es un token especial que se utiliza para obtener tokens de acceso adicionales,
+          esto le permite traer token de acceso adicionales, esto le permite tener tokens de acceso de corta duración 
+          sin tener que recopilar credenciales cada que uno caduca
+          - se utiliza para autenticar al usuario después de que haya caducado el token de acceso inicial, esto sucede
+          entre bastidores sin la interacción del usuario, lo que facilita una experiencia de usuario mejorada sin
+          comprometer la seguridad, los tokens de actualización (refresh tokens) no le dan al usuario ningún acceso
+          adicional más allá del permitido original mente
+
+        - tokens:
+          - un token de programación es el componente básico del código fuente, los caracteres se clasifican como una de las
+          cinco clases de tokens que describen sus funciones (constantes, identificadores, operadores, palabras reservadas y
+          separadores) de acuerdo con las reglas de lenguaje de programacion
 
         - passport node:
           - es un middleware de autenticación para nodejs, extremadamente flexible y modular, passport se
@@ -761,3 +822,7 @@ CURSO NEST: DESARROLLO BACKEND ESCALABLE CON NODE - FERNANDO HERRERA UDEMY - 202
     - https://typeorm.io/
     - https://orkhan.gitbook.io/typeorm/ 
     - https://jwt.io/
+    - https://swagger.io/
+    - https://learning.postman.com/docs/getting-started/introduction/
+    - https://docs.nestjs.com/openapi/introduction
+    - https://docs.nestjs.com/openapi/introduction
