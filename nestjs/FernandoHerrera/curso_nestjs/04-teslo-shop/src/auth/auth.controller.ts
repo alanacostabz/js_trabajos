@@ -18,7 +18,7 @@ import { UserRoleGuard } from './guards/user-role.guard';
 import { RoleProtected } from './decorators/role-protected.decorator';
 import { ValidRoles } from './interfaces/valid-roles';
 import { Auth } from './decorators/auth.decorator';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiTags, ApiResponse } from '@nestjs/swagger';
 
 @ApiTags('Auth')
 @Controller('auth')
@@ -26,22 +26,47 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post('register')
+  @ApiResponse({
+    status: 201,
+    description: 'User was created',
+    type: User,
+  })
+  @ApiResponse({ status: 400, description: 'Bad request' })
+  @ApiResponse({ status: 403, description: 'Forbbiden, token related' })
   createUser(@Body() createUserDto: CreateUserDto) {
     return this.authService.create(createUserDto);
   }
 
   @Post('login')
+  @ApiResponse({
+    status: 201,
+    description: 'User Logged',
+  })
+  @ApiResponse({ status: 400, description: 'Bad request' })
+  @ApiResponse({ status: 403, description: 'Forbbiden, invalid credentials' })
   loginUser(@Body() loginUserDto: LoginUserDto) {
     return this.authService.login(loginUserDto);
   }
 
   @Get('check-status')
+  @ApiResponse({
+    status: 201,
+    description: 'User Status',
+  })
+  @ApiResponse({ status: 400, description: 'Bad request' })
+  @ApiResponse({ status: 403, description: 'Forbbiden, token related' })
   @Auth()
   checkAuthStatus(@GetUser() user: User) {
     return this.authService.checkAuthStatus(user);
   }
 
   @Get('private')
+  @ApiResponse({
+    status: 201,
+    description: 'User Logged',
+  })
+  @ApiResponse({ status: 400, description: 'Bad request' })
+  @ApiResponse({ status: 403, description: 'Forbbiden, invalid credentials' })
   @UseGuards(AuthGuard())
   testingPrivateRoute(
     @Req() request: Express.Request,

@@ -49,7 +49,7 @@ export class AuthService {
     });
 
     if (!user) {
-      throw new UnauthorizedException('Credentials are not valid (email) 1');
+      throw new UnauthorizedException('Credentials are not valid (email)');
     }
 
     if (!bcrypt.compareSync(password, user.password)) {

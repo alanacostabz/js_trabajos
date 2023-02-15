@@ -42,17 +42,38 @@ export class ProductsController {
   }
 
   @Get()
+  @ApiResponse({
+    status: 201,
+    description: 'Product List',
+    type: Product,
+  })
+  @ApiResponse({ status: 400, description: 'Bad request' })
+  @ApiResponse({ status: 403, description: 'Forbbiden, token related' })
   findAll(@Query() paginationDto: PaginationDto) {
     // console.log(paginationDto);
     return this.productsService.findAll(paginationDto);
   }
 
   @Get(':term')
+  @ApiResponse({
+    status: 201,
+    description: 'Product',
+    type: Product,
+  })
+  @ApiResponse({ status: 400, description: 'Bad request' })
+  @ApiResponse({ status: 403, description: 'Forbbiden, token related' })
   findOne(@Param('term') term: string) {
     return this.productsService.findOnePlain(term);
   }
 
   @Patch(':id')
+  @ApiResponse({
+    status: 201,
+    description: 'Product was updated',
+    type: Product,
+  })
+  @ApiResponse({ status: 400, description: 'Bad request' })
+  @ApiResponse({ status: 403, description: 'Forbbiden, token related' })
   @Auth(ValidRoles.admin)
   update(
     @Param('id', ParseUUIDPipe) id: string,
@@ -63,6 +84,12 @@ export class ProductsController {
   }
 
   @Delete(':id')
+  @ApiResponse({
+    status: 201,
+    description: 'Product was deleted',
+  })
+  @ApiResponse({ status: 400, description: 'Bad request' })
+  @ApiResponse({ status: 403, description: 'Forbbiden, token related' })
   @Auth(ValidRoles.admin)
   remove(@Param('id', ParseUUIDPipe) id: string) {
     return this.productsService.remove(id);

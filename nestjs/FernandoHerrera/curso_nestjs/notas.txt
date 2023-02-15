@@ -716,8 +716,14 @@ CURSO NEST: DESARROLLO BACKEND ESCALABLE CON NODE - FERNANDO HERRERA UDEMY - 202
         heroku:
           - es una plataforma de servicios en la nube (conocidos como PaaS o Platform as a Service) que
           permite manejar los servidores y configuraciones, escalamiento y la administración, su
-          popularidad ja crecido en los últimos años debido a su facilidad de uso y versatilidad para
+          popularidad ha crecido en los últimos años debido a su facilidad de uso y versatilidad para
           distintos proyectos
+
+        netlify:
+          - permite crear, alojar y mantener nuestro sitio web o aplicación con implementación continua, https de 1 
+          solo clic, entr otros
+          - es una empresa de informática en la nube remota que ofrece una plataforma de desarrollo que incluye servicios
+          de back-end de creación, implementación y sin servidor para aplicaciones web y sitios web dinámicos
 
         forRoot:
           - el método forRoot() admite todas las propiedades de configuración expuestas por el
@@ -808,6 +814,71 @@ CURSO NEST: DESARROLLO BACKEND ESCALABLE CON NODE - FERNANDO HERRERA UDEMY - 202
           CanActivate, los guardias tienen una sola responsabilidad, determinan si una solicitud dada
           será manejada por el controlador de ruta o no, dependiendo de ciertas condiciones (con
           permisos, roles, acl, etc) presentes en tiempo de ejecución 
+
+        - websockets:
+          - es una tecnología que proporciona un canal de compilación bidireccional y full-duplex sobre e único
+          socket tcp (tansmission control protocol: es el encargado de proporcionar un servicio de comunicación punto a punto
+          entre dos host, este protocolo de cuarto nivel está orientado a la capa de transporte a través de la conexión mutua
+          entre cliente y sevidor), está diseñada para ser implementada en navegadores y servidores web, pero puede
+          utilizarse por cualquier aplicación cliente/servidor
+          - es una tecnología avanzada que hace posible abrir una sesión de comunicación interactiva entre el navegador
+          del usuario y un servidor, con esta API, puede enviar mensajes a un servidor y recibir respuestas controladas
+          por eventos sin tener que consultar al sevidor para una respuesta
+          - tanto http y websocket son protocolos de comunicación utilizados en la comunicación cliente-servidor
+
+        - nest gateways:
+          - gateway es un término en inglés que significa puerta o portal, es un tipo de enrutador que funciona como un
+          punto de parada para los datos en su camino hacia otras redes, gracias a los gateway es posible la comunicación y
+          envío de datos de un lado a otro
+          - en nest un gateway es una clase anotada con el decorador @webSocketGatewar(), técnicamente, las puertas de enlace
+          son independientes de la plataforma, lo que las hace compatibles con cualquier biblioteca de websockets una vez que
+          que se crea un adaptador, hay dos plataformas ws compatibles para usar: socket.io y ws
+            
+            - socket io: es una biblioteca basada en eventos para aplicaciones web en tiempo real, permite la comunicación
+            bidireccional en tiempo real entre clientes web y servidores, consta de dos partes: una biblioteca del lado del
+            cliete que se ejecuta en el navegador y una biblioteca del lador del servidor para node.js
+
+            - ws (websocket library) es una implementación de cliente y servidor websocker fácil de usar
+
+        - vite:
+          - es una herramienta de compilación que tiene como objetivo proporcionar una experiencia de desarollo más rápida
+          y ágil para proyectos web mordernos
+          - la diferencia con webpack es que se reduce la velicidad, webpack construye el proyecto desde el origen y continúa
+          realizando compilaciones incrementales a medida que desarolla su proyecto, vite por otro lado está cargando su
+          código real en el navegador según sea necesario
+          - Mientras que un flujo de trabajo basado en un paquete como Webpack tendrá que procesar todos sus módulos de
+          JavaScript antes de una sola solicitud del navegador, Vite solo procesa sus módulos de dependencia antes de una
+          sola solicitud del navegador. Es por eso que Vite puede procesar su compilación de desarrollo más rápido que
+          Webpack.
+
+        - webpack:
+          - podríamos definir Webpack como una herramienta Open Source utilizada por los desarrolladores para empaquetar y
+            exportar todos los ficheros necesarios para que un proyecto funcione con todas sus dependencias frontend.
+
+        - cors:
+          - intercambio de recursos de origen cruzado, es una caracteristica de seguridad del navegador que restringe
+          las solicitudes http de origen cruzado que se inician desde secuencias de comandos que se ejecutan en el naveador
+          - es un mecanismo que permite que se puedan solicitar recursos restringidos en una página web desde un dominio
+          diferente del dominio que sirvió el primer recurso
+          - nos ayuda a permitir que dominios se van a permitir el acceso a este endpoint
+
+        - uri
+          - uniform resource identifier: es una secuencia única de carácteres que identifica un recurso lógico o físico 
+          utilizado por las tecnologías web, los uri se pueden usar para identificar cualquier cosa, incluidos objetos del
+          mundo real, como personas y lugares conceptos o recursos de información, como páginas web y libros
+
+        - url
+          - es un acrónimo de uniform resource locator y es una referencia (una dirección) a un recurso de internet,
+          una url tiene dos componentes principales: identificador de protocolo: para url http://example.com, el 
+          identificador de protocolo es http, nombre del recurso: para la url http://example.com, el nombre del recurso
+          es example.com
+
+        - diferencias entre uri y url:
+          - uri identifica un recurso y lo diferencia de otros mediante el uso de un nombre, una ubicación o ambos,
+          url identifica la dirección web o la ubicación de un recurso único, uri contiene componentes como un esquema,
+          autoridadm ruta y consulta, url tiene componentes similares a un uri, pero su autoridad consiste en un nombre de
+          dominio y puerto
+
 
 
   RECURSOS:
